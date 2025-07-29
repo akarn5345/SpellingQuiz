@@ -1,189 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spelling Quiz</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f6f8;
-      margin: 0;
-      padding: 20px;
-      color: #333;
-    }
-
-    h1 {
-      text-align: center;
-      color: #2c3e50;
-      margin-bottom: 40px;
-    }
-
-    .question {
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      padding: 20px;
-      margin-bottom: 25px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .question h3 {
-      margin-top: 0;
-    }
-
-    .options label {
-      display: block;
-      position: relative;
-      padding-left: 40px;
-      margin: 12px 0;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .options input[type="radio"] {
-      display: none;
-    }
-
-    .options label::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 6px;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      border: 2px solid #ccc;
-      background: white;
-      transition: all 0.3s ease;
-    }
-
-    .correct::before {
-      content: "✔";
-      color: white;
-      font-size: 16px;
-      text-align: center;
-      line-height: 24px;
-      background-color: #2ecc71;
-      border: none;
-      border-radius: 50%;
-    }
-
-    .incorrect::before {
-      content: "✖";
-      color: white;
-      font-size: 16px;
-      text-align: center;
-      line-height: 24px;
-      background-color: #e74c3c;
-      border: none;
-      border-radius: 4px;
-    }
-
-    .answer {
-      display: none;
-      margin-top: 10px;
-      font-weight: bold;
-    }
-
-    .correct-text {
-      color: green;
-    }
-
-    .incorrect-text {
-      color: red;
-    }
-
-    #results {
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      margin-top: 30px;
-    }
-
-    button {
-      display: block;
-      margin: 30px auto;
-      padding: 12px 30px;
-      font-size: 18px;
-      background-color: #3498db;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #2980b9;
-    }
-
-    @media (max-width: 600px) {
-      body {
-        padding: 10px;
-      }
-
-      .question {
-        padding: 15px;
-      }
-
-      button {
-        width: 90%;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <h1>Spelling Quiz</h1>
-  <div id="quiz"></div>
-  <button onclick="showResults()">Submit Quiz</button>
-  <div id="results"></div>
-
-  <script>
+<script>
     let score = 0;
     let totalQuestions = 25;
-    let selectedQuestions = [];
 
-    fetch('quiz_data.json')
-      .then(response => response.json())
-      .then(data => {
-        const shuffled = data.sort(() => Math.random() - 0.5);
-        selectedQuestions = shuffled.slice(0, totalQuestions);
+    const data = [
+      {
+        question: "Choose the correct spelling.",
+        options: {
+          A: "Recieve",
+          B: "Receive",
+          C: "Receeve",
+          D: "Receve"
+        },
+        correct_letter: "B"
+      },
+      {
+        question: "Which is the right spelling?",
+        options: {
+          A: "Accomodate",
+          B: "Acommodate",
+          C: "Accommodate",
+          D: "Acommadate"
+        },
+        correct_letter: "C"
+      },
+      // Add more questions here...
+    ];
 
-        const quizContainer = document.getElementById('quiz');
+    const shuffled = data.sort(() => Math.random() - 0.5);
+    const selectedQuestions = shuffled.slice(0, totalQuestions);
 
-        selectedQuestions.forEach((q, index) => {
-          const questionDiv = document.createElement('div');
-          questionDiv.className = 'question';
-          questionDiv.innerHTML = `<h3>Q${index + 1}. ${q.question}</h3>`;
+    const quizContainer = document.getElementById('quiz');
 
-          const optionsDiv = document.createElement('div');
-          optionsDiv.className = 'options';
+    selectedQuestions.forEach((q, index) => {
+      const questionDiv = document.createElement('div');
+      questionDiv.className = 'question';
+      questionDiv.innerHTML = `<h3>Q${index + 1}. ${q.question}</h3>`;
 
-          for (let letter in q.options) {
-            optionsDiv.innerHTML += `
-              <label>
-                <input type="radio" name="q${index}" value="${letter}" onchange="checkAnswer(${index}, this)">
-                ${letter}. ${q.options[letter]}
-              </label>
-            `;
-          }
+      const optionsDiv = document.createElement('div');
+      optionsDiv.className = 'options';
 
-          const answerDiv = document.createElement('div');
-          answerDiv.id = `answer${index}`;
-          answerDiv.className = 'answer';
-          questionDiv.appendChild(optionsDiv);
-          questionDiv.appendChild(answerDiv);
-          quizContainer.appendChild(questionDiv);
-        });
-      });
+      for (let letter in q.options) {
+        optionsDiv.innerHTML += `
+          <label>
+            <input type="radio" name="q${index}" value="${letter}" onchange="checkAnswer(${index}, this)">
+            ${letter}. ${q.options[letter]}
+          </label>
+        `;
+      }
+
+      const answerDiv = document.createElement('div');
+      answerDiv.id = `answer${index}`;
+      answerDiv.className = 'answer';
+      questionDiv.appendChild(optionsDiv);
+      questionDiv.appendChild(answerDiv);
+      quizContainer.appendChild(questionDiv);
+    });
 
     function checkAnswer(questionIndex, selectedInput) {
-      fetch('quiz_data.json')
-        .then(response => response.json())
-        .then(data => {
-          const q = data[questionIndex];
-          const answerDiv = document.getElementById(`answer${questionIn
+      const q = selectedQuestions[questionIndex];
+      const answerDiv = document.getElementById(`answer${questionIndex}`);
+      answerDiv.style.display = 'block';
+
+      const inputs = document.getElementsByName(`q${questionIndex}`);
+      inputs.forEach(input => {
+        const label = input.parentElement;
+        if (input.value === q.correct_letter) {
+          label.classList.add("correct");
+        } else if (input.checked) {
+          label.classList.add("incorrect");
+        }
+        input.disabled = true;
+      });
+
+      if (selectedInput.value === q.correct_letter) {
+        score++;
+      } else {
+        answerDiv.className = 'answer incorrect';
+        answerDiv.innerHTML += `<br>Your choice (${selectedInput.value}) is incorrect.`;
+      }
+    }
+
+    function showResults() {
+      document.getElementById('results').textContent = `Final Score: ${score} / ${totalQuestions}`;
+      document.querySelectorAll('input[type="radio"]').forEach(i => i.disabled = true);
+    }
+</script>
