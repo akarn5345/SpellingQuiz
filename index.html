@@ -91,6 +91,42 @@
         width: 90%;
       }
     }
+    /* Existing styles here */
+body {
+  font-family: Arial;
+}
+
+/* 👇 Add this block at the end */
+input[type="radio"] {
+    display: none;
+}
+label.radio-option {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+label.radio-option::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    background: white;
+}
+label.correct::before {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+label.incorrect::before {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+}
   </style>
 </head>
 
@@ -139,25 +175,34 @@
         });
       });
 
-    function checkAnswer(index, input) {
-      const q = selectedQuestions[index];
-      const answerDiv = document.getElementById(`answer${index}`);
-      const selected = input.value;
+    function checkAnswer(questionIndex, selectedLetter) {
+    fetch('quiz_data.json')
+        .then(response => response.json())
+        .then(data => {
+            const q = data[questionIndex];
+            const answerDiv = document.getElementById(`answer${questionIndex}`);
+            answerDiv.style.display = 'block';
 
-      if (selected === q.correct_letter) {
-        score++;
-        answerDiv.className = 'answer correct';
-        answerDiv.textContent = `Correct! ✅ ${q.correct_word}`;
-      } else {
-        answerDiv.className = 'answer incorrect';
-        answerDiv.textContent = `Incorrect ❌. Correct: ${q.correct_word}`;
-      }
-      answerDiv.style.display = 'block';
+            const inputs = document.getElementsByName(`q${questionIndex}`);
+            inputs.forEach(input => {
+                const label = input.parentElement;
+                if (input.value === q.correct_letter) {
+                    label.classList.add("correct");
+                } else if (input.checked) {
+                    label.classList.add("incorrect");
+                }
+                input.disabled = true;
+            });
 
-      // Disable all options
-      const inputs = document.querySelectorAll(`input[name="q${index}"]`);
-      inputs.forEach(i => i.disabled = true);
-    }
+            if (selectedLetter === q.correct_letter) {
+                score++;
+            } else {
+                answerDiv.className = 'answer incorrect';
+                answerDiv.innerHTML += `<br>Your choice (${selectedLetter}) is incorrect.`;
+            }
+        });
+}
+
 
     function showResults() {
       document.getElementById('results').textContent = `Final Score: ${score} / ${totalQuestions}`;
