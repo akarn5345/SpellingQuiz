@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spelling Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .question {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .options {
+            display: inline-block;
+            text-align: left;
+            margin: 0 auto;
+        }
+
+        .answer {
+            display: none;
+            color: green;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .incorrect {
+            color: red;
+            text-align: center;
+        }
+
+        #results {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Spelling Quiz</h1>
+    <div id="quiz"></div>
+    <div id="results"></div>
+    <button onclick="showResults()">Submit Quiz</button>
+    <script>
+        let score = 0;
+        let totalQuestions = 25;
+        let quizData = []; // This will hold the 25 shuffled questions
+
+        // Load and shuffle quiz data
+        fetch('quiz_data.json')
+            .then(response => response.json())
+            .then(data => {
+                quizData = data.sort(() => Math.random() - 0.5).slice(0, 25);
+
+                const quizContainer = document.getElementById('quiz');
+
+                quizData.forEach((q, index) => {
+                    const questionDiv = document.createElement('div');
+                    questionDiv.className = 'question';
+                    questionDiv.innerHTML = `<h3>Q${index + 1}. ${q.question}</h3>`;
+
+                    const optionsDiv = document.createElement('div');
+                    optionsDiv.className = 'options';
+                    for (let letter in q.options) {
+                        optionsDiv.innerHTML += `
+                            <label>
+                                <input type="radio" name="q${index}" value="${letter}" onchange="checkAnswer(${index}, this.value)">
+                                ${letter}. ${q.options[letter]}
+                            </label><br>
+                        `;
+                    }
+
+                    const answerDiv = document.createElement('div');
+                    answerDiv.id = `answer${index}`;
+                    answerDiv.className = 'answer';
+                    answerDiv.innerHTML = `Answer: ${q.correct_word}`;
+
+                    questionDiv.appendChild(optionsDiv);
+                    questionDiv.appendChild(answerDiv);
+                    quizContainer.appendChild(questionDiv);
+                });
+            })
+            .catch(error => console.error('Error loading quiz data:', error));
+
+        // Check answer and update score
+        function checkAnswer(questionIndex, selectedLetter) {
+            const q = quizData[questionIndex];  // Use the same shuffled question
+            const answerDiv = document.getElementById(`answer${questionIndex}`);
+            answerDiv.style.display = 'block';
+
+            if (selectedLetter === q.correct_letter) {
+                score++;
+            } else {
+                answerDiv.className = 'answer incorrect';
+                answerDiv.innerHTML += `<br>Your choice (${selectedLetter}) is incorrect.`;
+            }
+
+            // Disable all radio buttons for this question
+            document.querySelectorAll(`input[name="q${questionIndex}"]`).forEach(input => {
+                input.disabled = true;
+            });
+        }
+
+        // Show final results
+        function showResults() {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `Final Score: ${score} out of ${totalQuestions}`;
+            // Removed global disable since checkAnswer handles it per question
+        }
+    </script>
+</body>
+
+</html>
