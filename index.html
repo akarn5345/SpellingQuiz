@@ -37,8 +37,50 @@
 
     .options label {
       display: block;
-      margin: 10px 0;
+      position: relative;
+      padding-left: 40px;
+      margin: 12px 0;
       cursor: pointer;
+      user-select: none;
+    }
+
+    .options input[type="radio"] {
+      display: none;
+    }
+
+    .options label::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      background: white;
+      transition: all 0.3s ease;
+    }
+
+    .correct::before {
+      content: "✔";
+      color: white;
+      font-size: 16px;
+      text-align: center;
+      line-height: 24px;
+      background-color: #2ecc71;
+      border: none;
+      border-radius: 50%;
+    }
+
+    .incorrect::before {
+      content: "✖";
+      color: white;
+      font-size: 16px;
+      text-align: center;
+      line-height: 24px;
+      background-color: #e74c3c;
+      border: none;
+      border-radius: 4px;
     }
 
     .answer {
@@ -47,11 +89,11 @@
       font-weight: bold;
     }
 
-    .correct {
+    .correct-text {
       color: green;
     }
 
-    .incorrect {
+    .incorrect-text {
       color: red;
     }
 
@@ -91,42 +133,6 @@
         width: 90%;
       }
     }
-    /* Existing styles here */
-body {
-  font-family: Arial;
-}
-
-/* 👇 Add this block at the end */
-input[type="radio"] {
-    display: none;
-}
-label.radio-option {
-    display: block;
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    user-select: none;
-}
-label.radio-option::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 5px;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    border: 2px solid #ccc;
-    background: white;
-}
-label.correct::before {
-    background-color: #3498db;
-    border-color: #3498db;
-}
-label.incorrect::before {
-    background-color: #e74c3c;
-    border-color: #e74c3c;
-}
   </style>
 </head>
 
@@ -175,40 +181,9 @@ label.incorrect::before {
         });
       });
 
-    function checkAnswer(questionIndex, selectedLetter) {
-    fetch('quiz_data.json')
+    function checkAnswer(questionIndex, selectedInput) {
+      fetch('quiz_data.json')
         .then(response => response.json())
         .then(data => {
-            const q = data[questionIndex];
-            const answerDiv = document.getElementById(`answer${questionIndex}`);
-            answerDiv.style.display = 'block';
-
-            const inputs = document.getElementsByName(`q${questionIndex}`);
-            inputs.forEach(input => {
-                const label = input.parentElement;
-                if (input.value === q.correct_letter) {
-                    label.classList.add("correct");
-                } else if (input.checked) {
-                    label.classList.add("incorrect");
-                }
-                input.disabled = true;
-            });
-
-            if (selectedLetter === q.correct_letter) {
-                score++;
-            } else {
-                answerDiv.className = 'answer incorrect';
-                answerDiv.innerHTML += `<br>Your choice (${selectedLetter}) is incorrect.`;
-            }
-        });
-}
-
-
-    function showResults() {
-      document.getElementById('results').textContent = `Final Score: ${score} / ${totalQuestions}`;
-      document.querySelectorAll('input[type="radio"]').forEach(i => i.disabled = true);
-    }
-  </script>
-</body>
-
-</html>
+          const q = data[questionIndex];
+          const answerDiv = document.getElementById(`answer${questionIn
