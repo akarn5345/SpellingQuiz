@@ -2,119 +2,168 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spelling Quiz</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            font-size: 20px;
-            text-align: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spelling Quiz</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
 
-        .question {
-            margin-bottom: 40px;
-            text-align: center;
-        }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 40px;
+    }
 
-        .options {
-            display: inline-block;
-            text-align: left;
-            margin: 0 auto;
-        }
+    .question {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+      margin-bottom: 25px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-        .answer {
-            display: none;
-            color: green;
-            font-weight: bold;
-            text-align: center;
-        }
+    .question h3 {
+      margin-top: 0;
+    }
 
-        .incorrect {
-            color: red;
-            text-align: center;
-        }
+    .options label {
+      display: block;
+      margin: 10px 0;
+      cursor: pointer;
+    }
 
-        #results {
-            margin-top: 20px;
-            font-weight: bold;
-        }
-    </style>
+    .answer {
+      display: none;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+
+    #results {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 30px;
+    }
+
+    button {
+      display: block;
+      margin: 30px auto;
+      padding: 12px 30px;
+      font-size: 18px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      .question {
+        padding: 15px;
+      }
+
+      button {
+        width: 90%;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <h1>Spelling Quiz</h1>
-    <div id="quiz"></div>
-    <div id="results"></div>
-    <button onclick="showResults()">Submit Quiz</button>
-    <script>
-        let score = 0;
-        let totalQuestions = 25;
-        let quizData = []; // This will hold the 25 shuffled questions
+  <h1>Spelling Quiz</h1>
+  <div id="quiz"></div>
+  <button onclick="showResults()">Submit Quiz</button>
+  <div id="results"></div>
 
-        // Load and shuffle quiz data
-        fetch('quiz_data.json')
-            .then(response => response.json())
-            .then(data => {
-                quizData = data.sort(() => Math.random() - 0.5).slice(0, 25);
+  <script>
+    let score = 0;
+    let totalQuestions = 25;
+    let selectedQuestions = [];
 
-                const quizContainer = document.getElementById('quiz');
+    fetch('quiz_data.json')
+      .then(response => response.json())
+      .then(data => {
+        const shuffled = data.sort(() => Math.random() - 0.5);
+        selectedQuestions = shuffled.slice(0, totalQuestions);
 
-                quizData.forEach((q, index) => {
-                    const questionDiv = document.createElement('div');
-                    questionDiv.className = 'question';
-                    questionDiv.innerHTML = `<h3>Q${index + 1}. ${q.question}</h3>`;
+        const quizContainer = document.getElementById('quiz');
 
-                    const optionsDiv = document.createElement('div');
-                    optionsDiv.className = 'options';
-                    for (let letter in q.options) {
-                        optionsDiv.innerHTML += `
-                            <label>
-                                <input type="radio" name="q${index}" value="${letter}" onchange="checkAnswer(${index}, this.value)">
-                                ${letter}. ${q.options[letter]}
-                            </label><br>
-                        `;
-                    }
+        selectedQuestions.forEach((q, index) => {
+          const questionDiv = document.createElement('div');
+          questionDiv.className = 'question';
+          questionDiv.innerHTML = `<h3>Q${index + 1}. ${q.question}</h3>`;
 
-                    const answerDiv = document.createElement('div');
-                    answerDiv.id = `answer${index}`;
-                    answerDiv.className = 'answer';
-                    answerDiv.innerHTML = `Answer: ${q.correct_word}`;
+          const optionsDiv = document.createElement('div');
+          optionsDiv.className = 'options';
 
-                    questionDiv.appendChild(optionsDiv);
-                    questionDiv.appendChild(answerDiv);
-                    quizContainer.appendChild(questionDiv);
-                });
-            })
-            .catch(error => console.error('Error loading quiz data:', error));
+          for (let letter in q.options) {
+            optionsDiv.innerHTML += `
+              <label>
+                <input type="radio" name="q${index}" value="${letter}" onchange="checkAnswer(${index}, this)">
+                ${letter}. ${q.options[letter]}
+              </label>
+            `;
+          }
 
-        // Check answer and update score
-        function checkAnswer(questionIndex, selectedLetter) {
-            const q = quizData[questionIndex];  // Use the same shuffled question
-            const answerDiv = document.getElementById(`answer${questionIndex}`);
-            answerDiv.style.display = 'block';
+          const answerDiv = document.createElement('div');
+          answerDiv.id = `answer${index}`;
+          answerDiv.className = 'answer';
+          questionDiv.appendChild(optionsDiv);
+          questionDiv.appendChild(answerDiv);
+          quizContainer.appendChild(questionDiv);
+        });
+      });
 
-            if (selectedLetter === q.correct_letter) {
-                score++;
-            } else {
-                answerDiv.className = 'answer incorrect';
-                answerDiv.innerHTML += `<br>Your choice (${selectedLetter}) is incorrect.`;
-            }
+    function checkAnswer(index, input) {
+      const q = selectedQuestions[index];
+      const answerDiv = document.getElementById(`answer${index}`);
+      const selected = input.value;
 
-            // Disable all radio buttons for this question
-            document.querySelectorAll(`input[name="q${questionIndex}"]`).forEach(input => {
-                input.disabled = true;
-            });
-        }
+      if (selected === q.correct_letter) {
+        score++;
+        answerDiv.className = 'answer correct';
+        answerDiv.textContent = `Correct! ✅ ${q.correct_word}`;
+      } else {
+        answerDiv.className = 'answer incorrect';
+        answerDiv.textContent = `Incorrect ❌. Correct: ${q.correct_word}`;
+      }
+      answerDiv.style.display = 'block';
 
-        // Show final results
-        function showResults() {
-            const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = `Final Score: ${score} out of ${totalQuestions}`;
-            // Removed global disable since checkAnswer handles it per question
-        }
-    </script>
+      // Disable all options
+      const inputs = document.querySelectorAll(`input[name="q${index}"]`);
+      inputs.forEach(i => i.disabled = true);
+    }
+
+    function showResults() {
+      document.getElementById('results').textContent = `Final Score: ${score} / ${totalQuestions}`;
+      document.querySelectorAll('input[type="radio"]').forEach(i => i.disabled = true);
+    }
+  </script>
 </body>
 
 </html>
