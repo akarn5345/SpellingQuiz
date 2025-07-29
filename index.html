@@ -1,87 +1,29 @@
-<script>
-    let score = 0;
-    let totalQuestions = 25;
+<!DOCTYPE html>
+<html lang="en">
 
-    const data = [
-      {
-        question: "Choose the correct spelling.",
-        options: {
-          A: "Recieve",
-          B: "Receive",
-          C: "Receeve",
-          D: "Receve"
-        },
-        correct_letter: "B"
-      },
-      {
-        question: "Which is the right spelling?",
-        options: {
-          A: "Accomodate",
-          B: "Acommodate",
-          C: "Accommodate",
-          D: "Acommadate"
-        },
-        correct_letter: "C"
-      },
-      // Add more questions here...
-    ];
-
-    const shuffled = data.sort(() => Math.random() - 0.5);
-    const selectedQuestions = shuffled.slice(0, totalQuestions);
-
-    const quizContainer = document.getElementById('quiz');
-
-    selectedQuestions.forEach((q, index) => {
-      const questionDiv = document.createElement('div');
-      questionDiv.className = 'question';
-      questionDiv.innerHTML = `<h3>Q${index + 1}. ${q.question}</h3>`;
-
-      const optionsDiv = document.createElement('div');
-      optionsDiv.className = 'options';
-
-      for (let letter in q.options) {
-        optionsDiv.innerHTML += `
-          <label>
-            <input type="radio" name="q${index}" value="${letter}" onchange="checkAnswer(${index}, this)">
-            ${letter}. ${q.options[letter]}
-          </label>
-        `;
-      }
-
-      const answerDiv = document.createElement('div');
-      answerDiv.id = `answer${index}`;
-      answerDiv.className = 'answer';
-      questionDiv.appendChild(optionsDiv);
-      questionDiv.appendChild(answerDiv);
-      quizContainer.appendChild(questionDiv);
-    });
-
-    function checkAnswer(questionIndex, selectedInput) {
-      const q = selectedQuestions[questionIndex];
-      const answerDiv = document.getElementById(`answer${questionIndex}`);
-      answerDiv.style.display = 'block';
-
-      const inputs = document.getElementsByName(`q${questionIndex}`);
-      inputs.forEach(input => {
-        const label = input.parentElement;
-        if (input.value === q.correct_letter) {
-          label.classList.add("correct");
-        } else if (input.checked) {
-          label.classList.add("incorrect");
-        }
-        input.disabled = true;
-      });
-
-      if (selectedInput.value === q.correct_letter) {
-        score++;
-      } else {
-        answerDiv.className = 'answer incorrect';
-        answerDiv.innerHTML += `<br>Your choice (${selectedInput.value}) is incorrect.`;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spelling Quiz</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+      color: #333;
     }
 
-    function showResults() {
-      document.getElementById('results').textContent = `Final Score: ${score} / ${totalQuestions}`;
-      document.querySelectorAll('input[type="radio"]').forEach(i => i.disabled = true);
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 40px;
     }
-</script>
+
+    .question {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+      margin-bottom: 25px;
+      max-width: 60
