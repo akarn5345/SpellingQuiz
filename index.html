@@ -6,7 +6,7 @@
   <title>Spelling Quiz</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'Noto Sans Devanagari', sans-serif;
       padding: 20px;
       background: linear-gradient(to right, #e0eafc, #cfdef3);
       color: #333;
@@ -125,6 +125,7 @@
       margin-top: 7px;
       font-weight: bold;
       color: #444;
+      font-family: 'Noto Sans Devanagari', sans-serif;
     }
   </style>
 </head>
@@ -302,6 +303,7 @@
       // Show Hindi Meaning automatically after answer
       const questionIndex = Array.from(document.querySelectorAll('.question-block')).indexOf(questionBlock);
       const correctWord = selectedQuestions[questionIndex].correct_word;
+      const hindiMeaning = selectedQuestions[questionIndex].hindi_meaning || 'No Hindi meaning available';
       const correctBtn = Array.from(buttons).find(b => b.dataset.key === correctLetter);
 
       // Remove existing meaning if present
@@ -310,7 +312,7 @@
 
       const meaningDiv = document.createElement('div');
       meaningDiv.className = 'hindi-meaning-div';
-      meaningDiv.textContent = 'Hindi Meaning';
+      meaningDiv.textContent = hindiMeaning;
       correctBtn.parentElement.appendChild(meaningDiv);
 
       // Check if quiz is finished
@@ -320,7 +322,7 @@
         const resultMsg = document.getElementById('result-msg');
         const percent = (score / selectedQuestions.length) * 100;
         resultMsg.textContent = percent >= 50 ? "✅ Passed!" : "❌ Failed. Try Again.";
-        resultMsg.style.color = percent >= 50 ? "green": "red";
+        resultMsg.style.color = percent >= 50 ? "green" : "red";
       }
     }
 
