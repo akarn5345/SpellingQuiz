@@ -19,6 +19,25 @@
     .quiz-container {
       margin-top: 20px;
     }
+    .question-block {
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .question-block ul {
+      list-style: none;
+      padding: 0;
+    }
+    .question-block li {
+      margin: 5px 0;
+    }
+    .question-block button {
+      width: 100%;
+      padding: 8px;
+      font-size: 16px;
+    }
   </style>
 </head>
 <body>
@@ -39,7 +58,7 @@
     async function loadQuiz(year) {
       const res = await fetch('quiz_data.json');
       const data = await res.json();
-      quizData = data.filter(q => q.correct_word_year === year || String(q.correct_word_year) === String(year));
+      quizData = data.filter(q => String(q.year) === String(year));
       displayQuiz(quizData);
     }
 
@@ -47,12 +66,22 @@
       const container = document.getElementById('quiz-container');
       container.innerHTML = '';
 
+      if (questions.length === 0) {
+        container.innerHTML = '<p>No questions found for this year.</p>';
+        return;
+      }
+
       questions.forEach((q, index) => {
         const div = document.createElement('div');
+        div.className = 'question-block';
         div.innerHTML = `
           <h3>Q${index + 1}. ${q.question}</h3>
           <ul>
-            ${Object.entries(q.options).map(([key, val]) => `<li><button onclick="checkAnswer('${key}', '${q.correct_letter}', this)">${val}</button></li>`).join('')}
+            ${Object.entries(q.options).map(([key, val]) => `
+              <li>
+                <button onclick="checkAnswer('${key}', '${q.correct_letter}', this)">${val}</button>
+              </li>
+            `).join('')}
           </ul>
         `;
         container.appendChild(div);
@@ -60,10 +89,18 @@
     }
 
     function checkAnswer(selected, correct, btn) {
+      const buttons = btn.parentElement.parentElement.querySelectorAll("button");
+      buttons.forEach(b => b.disabled = true);
+
       if (selected === correct) {
         btn.style.backgroundColor = 'lightgreen';
       } else {
         btn.style.backgroundColor = 'lightcoral';
+        buttons.forEach(b => {
+          if (b.innerText === btn.parentElement.parentElement.parentElement.dataset.correctWord) {
+            b.style.backgroundColor = 'lightgreen';
+          }
+        });
       }
     }
   </script>
