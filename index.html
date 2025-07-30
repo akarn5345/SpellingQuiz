@@ -126,17 +126,6 @@
       font-weight: bold;
       color: #444;
     }
-    details.hindi-meaning-div summary {
-      cursor: pointer;
-      font-size: 15px;
-      color: #007acc;
-      font-weight: normal;
-      outline: none;
-    }
-    details.hindi-meaning-div[open] summary {
-      color: #333;
-      font-weight: bold;
-    }
   </style>
 </head>
 <body>
@@ -310,7 +299,7 @@
         scoreDiv.textContent = `Score: ${score} / ${selectedQuestions.length}`;
       }
 
-      // Show Hindi meaning dropdown with static message instead of API call
+      // Show Hindi Meaning automatically after answer
       const questionIndex = Array.from(document.querySelectorAll('.question-block')).indexOf(questionBlock);
       const correctWord = selectedQuestions[questionIndex].correct_word;
       const correctBtn = Array.from(buttons).find(b => b.dataset.key === correctLetter);
@@ -319,9 +308,9 @@
       let oldMeaningDiv = questionBlock.querySelector('.hindi-meaning-div');
       if (oldMeaningDiv) oldMeaningDiv.remove();
 
-      const meaningDiv = document.createElement('details');
+      const meaningDiv = document.createElement('div');
       meaningDiv.className = 'hindi-meaning-div';
-      meaningDiv.innerHTML = `<summary>Show Hindi Meaning</summary><span style="font-size:15px;">Hindi Meaning</span>`;
+      meaningDiv.textContent = 'Hindi Meaning';
       correctBtn.parentElement.appendChild(meaningDiv);
 
       // Check if quiz is finished
@@ -331,7 +320,7 @@
         const resultMsg = document.getElementById('result-msg');
         const percent = (score / selectedQuestions.length) * 100;
         resultMsg.textContent = percent >= 50 ? "✅ Passed!" : "❌ Failed. Try Again.";
-        resultMsg.style.color = percent >= 50 ? "green" : "red";
+        resultMsg.style.color = percent >= 50 ? "green": "red";
       }
     }
 
