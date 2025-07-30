@@ -84,6 +84,9 @@ with open(input_csv, newline='', encoding='utf-8') as csvfile:
         year_raw = row.get('Year')
         year = year_raw.strip() if year_raw and year_raw.strip() else '2024'
 
+        # Handle Hindi Meaning
+        hindi_meaning = row.get('Hindi Meaning', 'No Hindi meaning available').strip()
+
         year_counter[year] += 1
 
         options, correct_letter = generate_options(correct_word, all_words)
@@ -91,6 +94,7 @@ with open(input_csv, newline='', encoding='utf-8') as csvfile:
         quiz_data.append({
             'correct_word': format_word(correct_word),
             'year': year,
+            'hindi_meaning': hindi_meaning,
             'options': options,
             'correct_letter': correct_letter
         })
