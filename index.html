@@ -95,6 +95,10 @@
       margin-bottom: 12px;
       letter-spacing: 1px;
     }
+    .question-count-select {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
     /* Styles for quiz answer feedback */
     .correct-answer {
       background: #d4ffd4 !important;
@@ -117,9 +121,21 @@
       background: #f0f8ff !important;
       border-color: #007acc !important;
     }
-    .question-count-select {
-      margin-bottom: 10px;
-      font-size: 16px;
+    .hindi-meaning-div {
+      margin-top: 7px;
+      font-weight: bold;
+      color: #444;
+    }
+    details.hindi-meaning-div summary {
+      cursor: pointer;
+      font-size: 15px;
+      color: #007acc;
+      font-weight: normal;
+      outline: none;
+    }
+    details.hindi-meaning-div[open] summary {
+      color: #333;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -262,6 +278,22 @@
       container.appendChild(resultDiv);
     }
 
+    // Glosbe API for Hindi meaning
+    function fetchHindiMeaning(word, callback) {
+      fetch(`https://glosbe.com/gapi/translate?from=eng&dest=hin&format=json&phrase=${encodeURIComponent(word)}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.tuc && data.tuc.length > 0 && data.tuc[0].phrase && data.tuc[0].phrase.text) {
+            callback(data.tuc[0].phrase.text);
+          } else if (data.tuc && data.tuc.length > 0 && data.tuc[0].meanings && data.tuc[0].meanings.length > 0) {
+            callback(data.tuc[0].meanings[0].text);
+          } else {
+            callback('No Hindi meaning found');
+          }
+        })
+        .catch(() => callback('No Hindi meaning found'));
+    }
+
     function checkAnswer(btn, correctLetter) {
       const questionBlock = btn.closest('.question-block');
       const buttons = questionBlock.querySelectorAll("button");
@@ -293,6 +325,22 @@
       if (scoreDiv) {
         scoreDiv.textContent = `Score: ${score} / ${selectedQuestions.length}`;
       }
+
+      // Show Hindi meaning for the correct word after user answers
+      const questionIndex = Array.from(document.querySelectorAll('.question-block')).indexOf(questionBlock);
+      const correctWord = selectedQuestions[questionIndex].correct_word;
+      const correctBtn = Array.from(buttons).find(b => b.dataset.key === correctLetter);
+
+      // Remove existing meaning if present
+      let oldMeaningDiv = questionBlock.querySelector('.hindi-meaning-div');
+      if (oldMeaningDiv) oldMeaningDiv.remove();
+
+      fetchHindiMeaning(correctWord, function(hindiMeaning) {
+        const meaningDiv = document.createElement('details');
+        meaningDiv.className = 'hindi-meaning-div';
+        meaningDiv.innerHTML = `<summary>Show Hindi Meaning</summary><span style="font-size:15px;">${hindiMeaning}</span>`;
+        correctBtn.parentElement.appendChild(meaningDiv);
+      });
 
       // Check if quiz is finished
       const allButtons = document.querySelectorAll('.question-block button:not([disabled])');
