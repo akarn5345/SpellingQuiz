@@ -73,7 +73,7 @@
       border-radius: 4px;
       background-color: #f0f8ff;
       cursor: pointer;
-      transition: opacity 0.3s, color 0.3s;
+      transition: opacity 0.3s, color 0.3s, font-weight 0.3s, background 0.3s;
     }
     .score {
       font-size: 18px;
@@ -87,11 +87,27 @@
       margin-top: 10px;
       text-align: center;
     }
-    /* Dimmed style for incorrect answers */
+    /* Styles for quiz answer feedback */
+    .correct-answer {
+      background: #d4ffd4 !important;
+      color: #218838 !important;
+      font-weight: bold !important;
+      border-color: #218838 !important;
+      opacity: 1 !important;
+    }
+    .selected-wrong {
+      background: #ffd6d6 !important;
+      color: #c82333 !important;
+      font-weight: normal !important;
+      border-color: #c82333 !important;
+      opacity: 1 !important;
+    }
     .dimmed {
       opacity: 0.5;
       color: #aaa !important;
-      background-color: #f0f8ff !important;
+      font-weight: normal !important;
+      background: #f0f8ff !important;
+      border-color: #007acc !important;
     }
   </style>
 </head>
@@ -164,7 +180,7 @@
           <ul>
             ${Object.entries(q.options).map(([key, val]) => `
               <li>
-                <button data-correct="${key === q.correct_letter}" data-value="${val}" onclick="checkAnswer(this, '${q.correct_letter}', '${q.options[q.correct_letter]}')">${val}</button>
+                <button data-correct="${key === q.correct_letter}" data-key="${key}" data-value="${val}" onclick="checkAnswer(this, '${q.correct_letter}')">${val}</button>
               </li>
             `).join('')}
           </ul>
@@ -183,28 +199,32 @@
       container.appendChild(resultDiv);
     }
 
-    function checkAnswer(btn, correctLetter, correctValue) {
+    // Updated answer checking logic based on your requirements
+    function checkAnswer(btn, correctLetter) {
       const questionBlock = btn.closest('.question-block');
       const buttons = questionBlock.querySelectorAll("button");
       // Disable all buttons
       buttons.forEach(b => b.disabled = true);
 
-      // Mark pressed button correct/incorrect
-      if (btn.dataset.correct === "true") {
-        btn.style.backgroundColor = 'lightgreen';
-        score++;
-      } else {
-        btn.style.backgroundColor = 'lightcoral';
-      }
-
-      // Dim all incorrect buttons, keep the correct one normal
       buttons.forEach(b => {
-        if (b.dataset.correct === "false") {
-          b.classList.add('dimmed');
+        // Remove all feedback classes first
+        b.classList.remove('correct-answer', 'selected-wrong', 'dimmed');
+        // Mark correct answer
+        if (b.dataset.key === correctLetter) {
+          b.classList.add('correct-answer');
+        } else if (b === btn) {
+          // Mark wrong answer if this was the clicked one
+          b.classList.add('selected-wrong');
         } else {
-          b.classList.remove('dimmed');
+          // Dim all other wrong answers
+          b.classList.add('dimmed');
         }
       });
+
+      // Increase score if correct
+      if (btn.dataset.key === correctLetter) {
+        score++;
+      }
 
       // Update score display
       const scoreDiv = document.querySelector('.score');
