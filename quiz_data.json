@@ -2,32 +2,32 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Delete",
-      "b": "Delte",
-      "c": "Delute",
-      "d": "Deelte"
+      "a": "Aplpe",
+      "b": "Aple",
+      "c": "opple",
+      "d": "Apple"
     },
-    "correct_letter": "a",
-    "correct_word": "Delete"
+    "correct_letter": "d",
+    "correct_word": "Apple"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "AAbsolutely",
-      "b": "Absolately",
-      "c": "Absolutely",
-      "d": "Abselutely"
+      "a": "Abssolutely",
+      "b": "Absolutely",
+      "c": "Absolutly",
+      "d": "Absolutaly"
     },
-    "correct_letter": "c",
+    "correct_letter": "b",
     "correct_word": "Absolutely"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "AAbysmal",
-      "b": "ubysmal",
+      "a": "Aybsmal",
+      "b": "Abymal",
       "c": "Abysmal",
-      "d": "Abysmmal"
+      "d": "obysmal"
     },
     "correct_letter": "c",
     "correct_word": "Abysmal"
@@ -35,32 +35,32 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Accessobility",
-      "b": "Accessebility",
-      "c": "Accessibility",
-      "d": "ccessibility"
+      "a": "Accessibility",
+      "b": "Accessiblity",
+      "c": "Accossibility",
+      "d": "Acecssibility"
     },
-    "correct_letter": "c",
+    "correct_letter": "a",
     "correct_word": "Accessibility"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Accommodite",
-      "b": "Accammodate",
-      "c": "iccommodate",
-      "d": "Accommodate"
+      "a": "Accommodate",
+      "b": "Accommidate",
+      "c": "Accommoadte",
+      "d": "Accommodaate"
     },
-    "correct_letter": "d",
+    "correct_letter": "a",
     "correct_word": "Accommodate"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Accommoddation",
+      "a": "Accommodateon",
       "b": "Accommodation",
-      "c": "Accmomodation",
-      "d": "Accammodation"
+      "c": "Accommodtaion",
+      "d": "eccommodation"
     },
     "correct_letter": "b",
     "correct_word": "Accommodation"
@@ -68,54 +68,54 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Accirately",
-      "b": "Accuraately",
-      "c": "Accurately",
-      "d": "Accurtaely"
+      "a": "cAcurately",
+      "b": "Accurately",
+      "c": "Accuretely",
+      "d": "Accirately"
     },
-    "correct_letter": "c",
+    "correct_letter": "b",
     "correct_word": "Accurately"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "echievements",
-      "b": "Achievaments",
-      "c": "chievements",
-      "d": "Achievements"
+      "a": "Achaevements",
+      "b": "Achievements",
+      "c": "Achevements",
+      "d": "ichievements"
     },
-    "correct_letter": "d",
+    "correct_letter": "b",
     "correct_word": "Achievements"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Acknowledg",
-      "b": "Acknoweldge",
-      "c": "Acknowledge",
-      "d": "cknowledge"
+      "a": "Acknwledge",
+      "b": "Acknowledgee",
+      "c": "Acknowlidge",
+      "d": "Acknowledge"
     },
-    "correct_letter": "c",
+    "correct_letter": "d",
     "correct_word": "Acknowledge"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Acquaintance",
-      "b": "Acquantance",
-      "c": "Acquintance",
-      "d": "Acqoaintance"
+      "a": "Acqeaintance",
+      "b": "Acquaintance",
+      "c": "Acquantance",
+      "d": "Acquaentance"
     },
-    "correct_letter": "a",
+    "correct_letter": "b",
     "correct_word": "Acquaintance"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Agreu",
-      "b": "Agrae",
+      "a": "Agreee",
+      "b": "Agere",
       "c": "Agree",
-      "d": "gAree"
+      "d": "Agrree"
     },
     "correct_letter": "c",
     "correct_word": "Agree"
@@ -123,9 +123,9 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Allegetion",
-      "b": "ellegation",
-      "c": "Alleggation",
+      "a": "Alleagtion",
+      "b": "Allegotion",
+      "c": "ollegation",
       "d": "Allegation"
     },
     "correct_letter": "d",
@@ -134,21 +134,21 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Allocatian",
-      "b": "Alloation",
-      "c": "Allocation",
-      "d": "Alloctaion"
+      "a": "Allocaiton",
+      "b": "Allocatioon",
+      "c": "Allocaton",
+      "d": "Allocation"
     },
-    "correct_letter": "c",
+    "correct_letter": "d",
     "correct_word": "Allocation"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Amicablee",
-      "b": "Amicale",
+      "a": "Amicuble",
+      "b": "Amocable",
       "c": "Amicable",
-      "d": "Amiceble"
+      "d": "Amicabli"
     },
     "correct_letter": "c",
     "correct_word": "Amicable"
@@ -156,54 +156,54 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Apparatus",
-      "b": "Appartus",
-      "c": "Apparatuus",
-      "d": "Apparattus"
+      "a": "Apparatuus",
+      "b": "upparatus",
+      "c": "Apparatus",
+      "d": "Apparitus"
     },
-    "correct_letter": "a",
+    "correct_letter": "c",
     "correct_word": "Apparatus"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Aptitade",
-      "b": "Aptitude",
-      "c": "Aptiude",
-      "d": "Aptetude"
+      "a": "Aptetude",
+      "b": "AAptitude",
+      "c": "Aptatude",
+      "d": "Aptitude"
     },
-    "correct_letter": "b",
+    "correct_letter": "d",
     "correct_word": "Aptitude"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Assingment",
-      "b": "Assignment",
-      "c": "Assignmennt",
-      "d": "Assignmment"
+      "a": "Assognment",
+      "b": "Assinment",
+      "c": "Assigment",
+      "d": "Assignment"
     },
-    "correct_letter": "b",
+    "correct_letter": "d",
     "correct_word": "Assignment"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Athlites",
-      "b": "Atlhetes",
-      "c": "Athlees",
-      "d": "Athletes"
+      "a": "Athlates",
+      "b": "Athletes",
+      "c": "Athletos",
+      "d": "Athlete"
     },
-    "correct_letter": "d",
+    "correct_letter": "b",
     "correct_word": "Athletes"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Atrocioes",
+      "a": "Atrociosu",
       "b": "Atrocious",
-      "c": "Atocious",
-      "d": "AAtrocious"
+      "c": "tArocious",
+      "d": "otrocious"
     },
     "correct_letter": "b",
     "correct_word": "Atrocious"
@@ -211,32 +211,32 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Attempt",
-      "b": "tAtempt",
-      "c": "Attemptt",
-      "d": "Attmept"
+      "a": "Atttempt",
+      "b": "Attempt",
+      "c": "Atteempt",
+      "d": "Attemp"
     },
-    "correct_letter": "a",
+    "correct_letter": "b",
     "correct_word": "Attempt"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Attrbute",
-      "b": "Attribote",
-      "c": "Attriute",
-      "d": "Attribute"
+      "a": "Attribute",
+      "b": "Attrebute",
+      "c": "Attributo",
+      "d": "Attrribute"
     },
-    "correct_letter": "d",
+    "correct_letter": "a",
     "correct_word": "Attribute"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Aversian",
+      "a": "eversion",
       "b": "Aversion",
-      "c": "Aversino",
-      "d": "Averson"
+      "c": "Aversuon",
+      "d": "Avarsion"
     },
     "correct_letter": "b",
     "correct_word": "Aversion"
@@ -244,43 +244,43 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Award",
-      "b": "oward",
-      "c": "ward",
-      "d": "AAward"
+      "a": "Awarrd",
+      "b": "Awward",
+      "c": "Award",
+      "d": "Awardd"
     },
-    "correct_letter": "a",
+    "correct_letter": "c",
     "correct_word": "Award"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Beginning",
-      "b": "Beignning",
-      "c": "Begginning",
-      "d": "Begnining"
+      "a": "Beginnng",
+      "b": "Beginning",
+      "c": "Buginning",
+      "d": "Boginning"
     },
-    "correct_letter": "a",
+    "correct_letter": "b",
     "correct_word": "Beginning"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Belaeve",
-      "b": "Believe",
-      "c": "elieve",
-      "d": "Beieve"
+      "a": "Believe",
+      "b": "Belive",
+      "c": "BBelieve",
+      "d": "Beelieve"
     },
-    "correct_letter": "b",
+    "correct_letter": "a",
     "correct_word": "Believe"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Bziarre",
+      "a": "Bizarra",
       "b": "Bizarre",
-      "c": "Bizare",
-      "d": "Bizerre"
+      "c": "Biarre",
+      "d": "Bziarre"
     },
     "correct_letter": "b",
     "correct_word": "Bizarre"
@@ -288,9 +288,9 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Bucolci",
-      "b": "BBucolic",
-      "c": "Buolic",
+      "a": "Bucoliic",
+      "b": "Bocolic",
+      "c": "Bucoilc",
       "d": "Bucolic"
     },
     "correct_letter": "d",
@@ -299,43 +299,43 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Bureaaucracy",
-      "b": "Bureaucrucy",
-      "c": "Bureaucracy",
-      "d": "Bureaucrac"
+      "a": "Bureaucracy",
+      "b": "Breaucracy",
+      "c": "Boreaucracy",
+      "d": "Bureaaucracy"
     },
-    "correct_letter": "c",
+    "correct_letter": "a",
     "correct_word": "Bureaucracy"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Capitalust",
-      "b": "Cappitalist",
-      "c": "Capitalest",
-      "d": "Capitalist"
+      "a": "Caapitalist",
+      "b": "Capitalist",
+      "c": "Captialist",
+      "d": "Capitalost"
     },
-    "correct_letter": "d",
+    "correct_letter": "b",
     "correct_word": "Capitalist"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Cemetey",
-      "b": "Cemetery",
-      "c": "emetery",
-      "d": "Cemmetery"
+      "a": "Cemetery",
+      "b": "Cemetiry",
+      "c": "Cemeterry",
+      "d": "Cemettery"
     },
-    "correct_letter": "b",
+    "correct_letter": "a",
     "correct_word": "Cemetery"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Centenar",
+      "a": "Cnetenary",
       "b": "Centenary",
-      "c": "Cntenary",
-      "d": "Centennary"
+      "c": "Centonary",
+      "d": "Centenray"
     },
     "correct_letter": "b",
     "correct_word": "Centenary"
@@ -343,21 +343,21 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Clera",
-      "b": "Clar",
-      "c": "Clear",
-      "d": "Clearr"
+      "a": "Celar",
+      "b": "Clear",
+      "c": "Cliar",
+      "d": "Cluar"
     },
-    "correct_letter": "c",
+    "correct_letter": "b",
     "correct_word": "Clear"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Colleaguu",
-      "b": "Colleage",
+      "a": "Colleegue",
+      "b": "Coleague",
       "c": "Colleague",
-      "d": "Colluague"
+      "d": "Cloleague"
     },
     "correct_letter": "c",
     "correct_word": "Colleague"
@@ -365,43 +365,43 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Colloqiual",
-      "b": "Celloquial",
-      "c": "Colliquial",
-      "d": "Colloquial"
+      "a": "Collqouial",
+      "b": "Colloquiul",
+      "c": "Colloquial",
+      "d": "Cloloquial"
     },
-    "correct_letter": "d",
+    "correct_letter": "c",
     "correct_word": "Colloquial"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Commercial",
-      "b": "Commircial",
-      "c": "Cummercial",
-      "d": "Cmomercial"
+      "a": "Commecrial",
+      "b": "Commeercial",
+      "c": "Commercial",
+      "d": "Commerical"
     },
-    "correct_letter": "a",
+    "correct_letter": "c",
     "correct_word": "Commercial"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Committeu",
-      "b": "Commattee",
-      "c": "Comimttee",
-      "d": "Committee"
+      "a": "Committee",
+      "b": "Committae",
+      "c": "Committue",
+      "d": "Commottee"
     },
-    "correct_letter": "d",
+    "correct_letter": "a",
     "correct_word": "Committee"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
       "a": "Components",
-      "b": "Componens",
-      "c": "Comonents",
-      "d": "Compponents"
+      "b": "Compinents",
+      "c": "Comopnents",
+      "d": "Comonents"
     },
     "correct_letter": "a",
     "correct_word": "Components"
@@ -409,32 +409,32 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Confidont",
-      "b": "Confidnt",
-      "c": "oCnfident",
-      "d": "Confident"
+      "a": "Confidennt",
+      "b": "Confident",
+      "c": "Confiden",
+      "d": "Confiident"
     },
-    "correct_letter": "d",
+    "correct_letter": "b",
     "correct_word": "Confident"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Confidentiul",
-      "b": "Confidential",
-      "c": "Confidental",
-      "d": "Cofidential"
+      "a": "Confidenttial",
+      "b": "onfidential",
+      "c": "Confidential",
+      "d": "Conidential"
     },
-    "correct_letter": "b",
+    "correct_letter": "c",
     "correct_word": "Confidential"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Cononisseur",
-      "b": "Connoissour",
+      "a": "Connooisseur",
+      "b": "CConnoisseur",
       "c": "Connoisseur",
-      "d": "Cnnoisseur"
+      "d": "Conniisseur"
     },
     "correct_letter": "c",
     "correct_word": "Connoisseur"
@@ -442,54 +442,54 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Consciuntious",
-      "b": "Conscientious",
-      "c": "Conscientius",
-      "d": "Consciientious"
+      "a": "Conscientaous",
+      "b": "Censcientious",
+      "c": "Conscientoius",
+      "d": "Conscientious"
     },
-    "correct_letter": "b",
+    "correct_letter": "d",
     "correct_word": "Conscientious"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Conscaous",
+      "a": "Cosncious",
       "b": "Consciious",
-      "c": "Conscious",
-      "d": "oCnscious"
+      "c": "Consciius",
+      "d": "Conscious"
     },
-    "correct_letter": "c",
+    "correct_letter": "d",
     "correct_word": "Conscious"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Consensus",
-      "b": "Cnsensus",
-      "c": "Consinsus",
-      "d": "Consensuus"
+      "a": "Consesus",
+      "b": "Censensus",
+      "c": "Consensus",
+      "d": "Conssensus"
     },
-    "correct_letter": "a",
+    "correct_letter": "c",
     "correct_word": "Consensus"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Consumerisst",
-      "b": "Consumerist",
-      "c": "Consumerst",
-      "d": "Consumurist"
+      "a": "Consumerist",
+      "b": "Censumerist",
+      "c": "oCnsumerist",
+      "d": "Consumerast"
     },
-    "correct_letter": "b",
+    "correct_letter": "a",
     "correct_word": "Consumerist"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Coontainer",
+      "a": "Contaener",
       "b": "Container",
-      "c": "Contuiner",
-      "d": "Contiiner"
+      "c": "ontainer",
+      "d": "Cuntainer"
     },
     "correct_letter": "b",
     "correct_word": "Container"
@@ -497,32 +497,32 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Contempitble",
-      "b": "Cotemptible",
-      "c": "Contemptile",
-      "d": "Contemptible"
+      "a": "oCntemptible",
+      "b": "Contemptibli",
+      "c": "Contemptible",
+      "d": "Coontemptible"
     },
-    "correct_letter": "d",
+    "correct_letter": "c",
     "correct_word": "Contemptible"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Contridiction",
-      "b": "Contradiction",
-      "c": "Contradition",
-      "d": "Contadiction"
+      "a": "Contradiction",
+      "b": "Contraiction",
+      "c": "Contradiciton",
+      "d": "Cotnradiction"
     },
-    "correct_letter": "b",
+    "correct_letter": "a",
     "correct_word": "Contradiction"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Contrabution",
-      "b": "Cintribution",
+      "a": "Controbution",
+      "b": "Conntribution",
       "c": "Contribution",
-      "d": "Conttribution"
+      "d": "Contributian"
     },
     "correct_letter": "c",
     "correct_word": "Contribution"
@@ -530,53 +530,53 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Conveniet",
-      "b": "Convenietn",
-      "c": "Convenient",
-      "d": "Convanient"
+      "a": "Conveniient",
+      "b": "Convenient",
+      "c": "Conveniant",
+      "d": "Conveniont"
     },
-    "correct_letter": "c",
+    "correct_letter": "b",
     "correct_word": "Convenient"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Culinay",
-      "b": "Culinaryy",
-      "c": "ulinary",
-      "d": "Culinary"
+      "a": "Culinary",
+      "b": "Calinary",
+      "c": "Clinary",
+      "d": "Culinarry"
     },
-    "correct_letter": "d",
+    "correct_letter": "a",
     "correct_word": "Culinary"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Deffinitely",
-      "b": "Dfeinitely",
-      "c": "Defanitely",
-      "d": "Definitely"
+      "a": "Definiely",
+      "b": "Definitely",
+      "c": "Definately",
+      "d": "Definitelly"
     },
-    "correct_letter": "d",
+    "correct_letter": "b",
     "correct_word": "Definitely"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Descondant",
-      "b": "Descenndant",
-      "c": "Descendant",
-      "d": "Dscendant"
+      "a": "Descendant",
+      "b": "Descendent",
+      "c": "Descondant",
+      "d": "Dascendant"
     },
-    "correct_letter": "c",
+    "correct_letter": "a",
     "correct_word": "Descendant"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Diffese",
-      "b": "Diffusee",
-      "c": "Diffusu",
+      "a": "Diiffuse",
+      "b": "Diffusa",
+      "c": "Doffuse",
       "d": "Diffuse"
     },
     "correct_letter": "d",
@@ -585,64 +585,64 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Dliemma",
-      "b": "Dalemma",
-      "c": "Dilemma",
-      "d": "Dilumma"
+      "a": "Dilemma",
+      "b": "Dillemma",
+      "c": "iDlemma",
+      "d": "Dilemmo"
     },
-    "correct_letter": "c",
+    "correct_letter": "a",
     "correct_word": "Dilemma"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Dosasters",
-      "b": "Disatsers",
-      "c": "Disasters",
-      "d": "Disastars"
+      "a": "Disasters",
+      "b": "Disastors",
+      "c": "Disaster",
+      "d": "Disassters"
     },
-    "correct_letter": "c",
+    "correct_letter": "a",
     "correct_word": "Disasters"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Discipline",
-      "b": "Duscipline",
-      "c": "Dicipline",
-      "d": "Disciplina"
+      "a": "Discupline",
+      "b": "Disciplone",
+      "c": "Discipline",
+      "d": "Disciplane"
     },
-    "correct_letter": "a",
+    "correct_letter": "c",
     "correct_word": "Discipline"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Economics",
-      "b": "Eocnomics",
-      "c": "Economacs",
-      "d": "Economisc"
+      "a": "Economis",
+      "b": "Econoomics",
+      "c": "Eocnomics",
+      "d": "Economics"
     },
-    "correct_letter": "a",
+    "correct_letter": "d",
     "correct_word": "Economics"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Educationil",
-      "b": "Educational",
-      "c": "Educatonal",
-      "d": "Educatinal"
+      "a": "Educational",
+      "b": "Eductaional",
+      "c": "Edcuational",
+      "d": "Edocational"
     },
-    "correct_letter": "b",
+    "correct_letter": "a",
     "correct_word": "Educational"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Efficiant",
-      "b": "Efficientt",
-      "c": "Eficient",
+      "a": "Efficiet",
+      "b": "Effficient",
+      "c": "Effiicient",
       "d": "Efficient"
     },
     "correct_letter": "d",
@@ -651,32 +651,32 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "umbarrass",
-      "b": "Embarriss",
-      "c": "Embarrsas",
-      "d": "Embarrass"
+      "a": "mEbarrass",
+      "b": "Emmbarrass",
+      "c": "Embarrass",
+      "d": "Embarrss"
     },
-    "correct_letter": "d",
+    "correct_letter": "c",
     "correct_word": "Embarrass"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "imbarrassed",
-      "b": "Embarrassed",
-      "c": "Embrrassed",
-      "d": "ambarrassed"
+      "a": "Embarrassed",
+      "b": "Embarrasse",
+      "c": "Embarrassd",
+      "d": "umbarrassed"
     },
-    "correct_letter": "b",
+    "correct_letter": "a",
     "correct_word": "Embarrassed"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
       "a": "Enouugh",
-      "b": "Enouh",
+      "b": "Enogh",
       "c": "Enough",
-      "d": "Enaugh"
+      "d": "Ennough"
     },
     "correct_letter": "c",
     "correct_word": "Enough"
@@ -684,21 +684,21 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Etrepreneurship",
-      "b": "Entrereneurship",
-      "c": "Entrepreneurship",
-      "d": "Entreppreneurship"
+      "a": "Entrepreneeurship",
+      "b": "Entrepreneurship",
+      "c": "Entepreneurship",
+      "d": "Entropreneurship"
     },
-    "correct_letter": "c",
+    "correct_letter": "b",
     "correct_word": "Entrepreneurship"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
       "a": "Evacuate",
-      "b": "Evacuatte",
-      "c": "Evacuute",
-      "d": "Evcauate"
+      "b": "Eacuate",
+      "c": "Evocuate",
+      "d": "Evacuote"
     },
     "correct_letter": "a",
     "correct_word": "Evacuate"
@@ -706,10 +706,10 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Exaggeraate",
+      "a": "Exoggerate",
       "b": "Exaggerate",
-      "c": "Exaggerati",
-      "d": "Exaggrate"
+      "c": "Exaggirate",
+      "d": "ixaggerate"
     },
     "correct_letter": "b",
     "correct_word": "Exaggerate"
@@ -717,32 +717,32 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Exceed",
-      "b": "Execed",
-      "c": "Exceeed",
-      "d": "Exced"
+      "a": "axceed",
+      "b": "Excee",
+      "c": "xEceed",
+      "d": "Exceed"
     },
-    "correct_letter": "a",
+    "correct_letter": "d",
     "correct_word": "Exceed"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Excellont",
-      "b": "Excelelnt",
-      "c": "Excellent",
-      "d": "Exceellent"
+      "a": "Excellint",
+      "b": "Excellent",
+      "c": "oxcellent",
+      "d": "Excelelnt"
     },
-    "correct_letter": "c",
+    "correct_letter": "b",
     "correct_word": "Excellent"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
       "a": "Exhibition",
-      "b": "Exhibitionn",
-      "c": "oxhibition",
-      "d": "ixhibition"
+      "b": "Exhhibition",
+      "c": "Exhibitiin",
+      "d": "Exhibiion"
     },
     "correct_letter": "a",
     "correct_word": "Exhibition"
@@ -750,21 +750,21 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "oxhilarate",
-      "b": "Exhilaraet",
-      "c": "Exhilurate",
-      "d": "Exhilarate"
+      "a": "Exhalarate",
+      "b": "Exhilraate",
+      "c": "Exhilarate",
+      "d": "Exhilurate"
     },
-    "correct_letter": "d",
+    "correct_letter": "c",
     "correct_word": "Exhilarate"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
       "a": "Exhilarated",
-      "b": "Exhilarateed",
-      "c": "Exhilaraetd",
-      "d": "xEhilarated"
+      "b": "Exhilarate",
+      "c": "Exhularated",
+      "d": "Exhilaratted"
     },
     "correct_letter": "a",
     "correct_word": "Exhilarated"
@@ -772,9 +772,9 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Exhilaratiun",
-      "b": "Exhilarotion",
-      "c": "oxhilaration",
+      "a": "ixhilaration",
+      "b": "Exhlaration",
+      "c": "Exhilartion",
       "d": "Exhilaration"
     },
     "correct_letter": "d",
@@ -783,53 +783,53 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Fictitius",
-      "b": "Fictitious",
-      "c": "Fictiitous",
-      "d": "Ficttious"
+      "a": "Fictitiouss",
+      "b": "Fictitioos",
+      "c": "Fictitious",
+      "d": "Fictitiaus"
     },
-    "correct_letter": "b",
+    "correct_letter": "c",
     "correct_word": "Fictitious"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Flexibiility",
-      "b": "Flexobility",
-      "c": "Flexibolity",
-      "d": "Flexibility"
+      "a": "Flexibility",
+      "b": "Fexibility",
+      "c": "Floxibility",
+      "d": "Flexibulity"
     },
-    "correct_letter": "d",
+    "correct_letter": "a",
     "correct_word": "Flexibility"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Fortofied",
-      "b": "Fortified",
-      "c": "Fortiffied",
-      "d": "Fertified"
+      "a": "Fortifeed",
+      "b": "FFortified",
+      "c": "Fortifeid",
+      "d": "Fortified"
     },
-    "correct_letter": "b",
+    "correct_letter": "d",
     "correct_word": "Fortified"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Fundamental",
-      "b": "Fundamenta",
-      "c": "Fundamuntal",
-      "d": "Fundamentol"
+      "a": "Fundomental",
+      "b": "Fundamintal",
+      "c": "Fundumental",
+      "d": "Fundamental"
     },
-    "correct_letter": "a",
+    "correct_letter": "d",
     "correct_word": "Fundamental"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Fuuturistic",
-      "b": "Futuristtic",
-      "c": "Futuirstic",
+      "a": "uturistic",
+      "b": "Futuristicc",
+      "c": "Futristic",
       "d": "Futuristic"
     },
     "correct_letter": "d",
@@ -838,42 +838,42 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Guilty",
-      "b": "Guiltyy",
-      "c": "Giulty",
-      "d": "Guiilty"
+      "a": "Guolty",
+      "b": "Guilty",
+      "c": "Geilty",
+      "d": "Guulty"
     },
-    "correct_letter": "a",
+    "correct_letter": "b",
     "correct_word": "Guilty"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Haraassment",
-      "b": "Harossment",
-      "c": "Harassment",
-      "d": "Harassmennt"
+      "a": "arassment",
+      "b": "Harassment",
+      "c": "Harussment",
+      "d": "Hurassment"
     },
-    "correct_letter": "c",
+    "correct_letter": "b",
     "correct_word": "Harassment"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Honesst",
-      "b": "Honest",
-      "c": "oHnest",
-      "d": "Hnoest"
+      "a": "Honest",
+      "b": "Honost",
+      "c": "Hnoest",
+      "d": "Honast"
     },
-    "correct_letter": "b",
+    "correct_letter": "a",
     "correct_word": "Honest"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Imprressive",
-      "b": "Imressive",
-      "c": "Impressivee",
+      "a": "Improssive",
+      "b": "Impreessive",
+      "c": "Immpressive",
       "d": "Impressive"
     },
     "correct_letter": "d",
@@ -882,21 +882,21 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Interript",
-      "b": "Inerrupt",
-      "c": "Interurpt",
-      "d": "Interrupt"
+      "a": "Interrupt",
+      "b": "Inteerrupt",
+      "c": "Interropt",
+      "d": "Interruppt"
     },
-    "correct_letter": "d",
+    "correct_letter": "a",
     "correct_word": "Interrupt"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Inunddated",
-      "b": "Inondated",
+      "a": "Inundateed",
+      "b": "Inuundated",
       "c": "Inundated",
-      "d": "Innundated"
+      "d": "Inundtaed"
     },
     "correct_letter": "c",
     "correct_word": "Inundated"
@@ -904,98 +904,98 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Listen",
-      "b": "isten",
-      "c": "Liisten",
-      "d": "Litsen"
+      "a": "Listenn",
+      "b": "Listn",
+      "c": "Listten",
+      "d": "Listen"
     },
-    "correct_letter": "a",
+    "correct_letter": "d",
     "correct_word": "Listen"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Lituurgy",
-      "b": "Litrgy",
-      "c": "Liutrgy",
-      "d": "Liturgy"
+      "a": "Liturg",
+      "b": "Liturgy",
+      "c": "Liurgy",
+      "d": "Ltiurgy"
     },
-    "correct_letter": "d",
+    "correct_letter": "b",
     "correct_word": "Liturgy"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "maintenanec",
-      "b": "maintenance",
-      "c": "maintanance",
+      "a": "maintennce",
+      "b": "aintenance",
+      "c": "maintenance",
       "d": "maaintenance"
     },
-    "correct_letter": "b",
+    "correct_letter": "c",
     "correct_word": "maintenance"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Menoeuvre",
-      "b": "Manoeuver",
-      "c": "Manoauvre",
-      "d": "Manoeuvre"
+      "a": "Manaeuvre",
+      "b": "Maneuvre",
+      "c": "Manoeuvre",
+      "d": "Munoeuvre"
     },
-    "correct_letter": "d",
+    "correct_letter": "c",
     "correct_word": "Manoeuvre"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Meeasurement",
-      "b": "Measurementt",
-      "c": "Measurmeent",
-      "d": "Measurement"
+      "a": "Measurement",
+      "b": "Measrement",
+      "c": "Measuerment",
+      "d": "Measuremnet"
     },
-    "correct_letter": "d",
+    "correct_letter": "a",
     "correct_word": "Measurement"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Mediation",
-      "b": "Mediaion",
-      "c": "Medietion",
-      "d": "Mediaiton"
+      "a": "Medeation",
+      "b": "Mediation",
+      "c": "Mediateon",
+      "d": "Mediatien"
     },
-    "correct_letter": "a",
+    "correct_letter": "b",
     "correct_word": "Mediation"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Millennium",
-      "b": "Mllennium",
-      "c": "Mullennium",
-      "d": "Mallennium"
+      "a": "MMillennium",
+      "b": "Millenneum",
+      "c": "Millennium",
+      "d": "Millenniem"
     },
-    "correct_letter": "a",
+    "correct_letter": "c",
     "correct_word": "Millennium"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Miscalculation",
-      "b": "Miscalculatiion",
-      "c": "Miscalculition",
-      "d": "Miscaluclation"
+      "a": "Mascalculation",
+      "b": "Misaclculation",
+      "c": "Miscalculation",
+      "d": "Miscalcuation"
     },
-    "correct_letter": "a",
+    "correct_letter": "c",
     "correct_word": "Miscalculation"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Mischievoas",
+      "a": "Mischiivous",
       "b": "Mischievous",
-      "c": "Mischivous",
-      "d": "Mischievaus"
+      "c": "ischievous",
+      "d": "Mischiovous"
     },
     "correct_letter": "b",
     "correct_word": "Mischievous"
@@ -1003,31 +1003,31 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Momennt",
-      "b": "Moemnt",
-      "c": "Momunt",
-      "d": "Moment"
+      "a": "Momont",
+      "b": "Momunt",
+      "c": "Moment",
+      "d": "Momen"
     },
-    "correct_letter": "d",
+    "correct_letter": "c",
     "correct_word": "Moment"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Motivational",
-      "b": "Motuvational",
-      "c": "Motivatioal",
-      "d": "Motivationaal"
+      "a": "Motevational",
+      "b": "Motiavtional",
+      "c": "Motavational",
+      "d": "Motivational"
     },
-    "correct_letter": "a",
+    "correct_letter": "d",
     "correct_word": "Motivational"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
       "a": "National",
-      "b": "Natienal",
-      "c": "Nationul",
+      "b": "Nationa",
+      "c": "Natinoal",
       "d": "Natuonal"
     },
     "correct_letter": "a",
@@ -1036,32 +1036,32 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Nacessary",
-      "b": "Necossary",
-      "c": "Necessary",
-      "d": "Neecessary"
+      "a": "Necessary",
+      "b": "Necessayr",
+      "c": "Necessry",
+      "d": "Necessarry"
     },
-    "correct_letter": "c",
+    "correct_letter": "a",
     "correct_word": "Necessary"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Necessity",
-      "b": "Necesity",
+      "a": "Necissity",
+      "b": "Necessity",
       "c": "NNecessity",
-      "d": "Necesstiy"
+      "d": "Necessityy"
     },
-    "correct_letter": "a",
+    "correct_letter": "b",
     "correct_word": "Necessity"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
       "a": "Occasion",
-      "b": "Occaion",
-      "c": "Occaseon",
-      "d": "Occsion"
+      "b": "Occasioon",
+      "c": "Occaion",
+      "d": "ccasion"
     },
     "correct_letter": "a",
     "correct_word": "Occasion"
@@ -1069,43 +1069,43 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "accurrence",
-      "b": "ccurrence",
-      "c": "Occurrence",
-      "d": "Ocurrence"
+      "a": "Occurrenco",
+      "b": "Ocucrrence",
+      "c": "uccurrence",
+      "d": "Occurrence"
     },
-    "correct_letter": "c",
+    "correct_letter": "d",
     "correct_word": "Occurrence"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Offur",
-      "b": "Offer",
-      "c": "Offfer",
-      "d": "uffer"
+      "a": "Ofer",
+      "b": "iffer",
+      "c": "Offer",
+      "d": "Offre"
     },
-    "correct_letter": "b",
+    "correct_letter": "c",
     "correct_word": "Offer"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "apportunity",
-      "b": "Opportenity",
-      "c": "Opportunity",
-      "d": "Opportuniyt"
+      "a": "Oppertunity",
+      "b": "Opportunity",
+      "c": "Opportunit",
+      "d": "Opporrtunity"
     },
-    "correct_letter": "c",
+    "correct_letter": "b",
     "correct_word": "Opportunity"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Ostentotious",
+      "a": "Ostetatious",
       "b": "Ostentatious",
-      "c": "Ostentatous",
-      "d": "Ostentatioos"
+      "c": "Ostentatiouus",
+      "d": "ustentatious"
     },
     "correct_letter": "b",
     "correct_word": "Ostentatious"
@@ -1113,119 +1113,119 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Outstandong",
-      "b": "Outstanding",
-      "c": "Outstandeng",
-      "d": "Outstandng"
+      "a": "Outstanding",
+      "b": "autstanding",
+      "c": "Outstandinng",
+      "d": "Outsttanding"
     },
-    "correct_letter": "b",
+    "correct_letter": "a",
     "correct_word": "Outstanding"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Parallelism",
-      "b": "Paralllelism",
-      "c": "Paarllelism",
-      "d": "Parlalelism"
+      "a": "Parallelosm",
+      "b": "Parallelims",
+      "c": "Prallelism",
+      "d": "Parallelism"
     },
-    "correct_letter": "a",
+    "correct_letter": "d",
     "correct_word": "Parallelism"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Perfarmance",
-      "b": "Performance",
-      "c": "Perfirmance",
-      "d": "Parformance"
+      "a": "Performanca",
+      "b": "Perfarmance",
+      "c": "Performance",
+      "d": "Performonce"
     },
-    "correct_letter": "b",
+    "correct_letter": "c",
     "correct_word": "Performance"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Perseveranec",
-      "b": "Perseveranc",
-      "c": "Purseverance",
-      "d": "Perseverance"
+      "a": "Perseverancee",
+      "b": "Perseverance",
+      "c": "Peerseverance",
+      "d": "Perseverunce"
     },
-    "correct_letter": "d",
+    "correct_letter": "b",
     "correct_word": "Perseverance"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Possession",
-      "b": "Possessoin",
-      "c": "Psosession",
-      "d": "Pussession"
+      "a": "Possessioon",
+      "b": "Possossion",
+      "c": "Possession",
+      "d": "Possussion"
     },
-    "correct_letter": "a",
+    "correct_letter": "c",
     "correct_word": "Possession"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Povirty",
-      "b": "Poverrty",
-      "c": "Povrety",
-      "d": "Poverty"
+      "a": "Povrty",
+      "b": "Poverty",
+      "c": "Povverty",
+      "d": "Pooverty"
     },
-    "correct_letter": "d",
+    "correct_letter": "b",
     "correct_word": "Poverty"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Precedo",
-      "b": "Precede",
-      "c": "Precade",
-      "d": "Precide"
+      "a": "Pecede",
+      "b": "Precedi",
+      "c": "Precide",
+      "d": "Precede"
     },
-    "correct_letter": "b",
+    "correct_letter": "d",
     "correct_word": "Precede"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Prevailed",
-      "b": "Prevalied",
-      "c": "Prevailad",
-      "d": "Prevaileed"
+      "a": "Prevoiled",
+      "b": "Prevailed",
+      "c": "Provailed",
+      "d": "Prevaied"
     },
-    "correct_letter": "a",
+    "correct_letter": "b",
     "correct_word": "Prevailed"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Priortiy",
-      "b": "Priorty",
-      "c": "Priority",
-      "d": "Prriority"
+      "a": "Priroity",
+      "b": "Prioriyt",
+      "c": "Pririty",
+      "d": "Priority"
     },
-    "correct_letter": "c",
+    "correct_letter": "d",
     "correct_word": "Priority"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Privilege",
-      "b": "Privilgee",
-      "c": "Privilegee",
-      "d": "Pivilege"
+      "a": "Priviloge",
+      "b": "Pruvilege",
+      "c": "Privilege",
+      "d": "Priviilege"
     },
-    "correct_letter": "a",
+    "correct_letter": "c",
     "correct_word": "Privilege"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Proccd",
-      "b": "Precced",
-      "c": "rPocced",
+      "a": "Prcoced",
+      "b": "Proccd",
+      "c": "Proccced",
       "d": "Procced"
     },
     "correct_letter": "d",
@@ -1234,65 +1234,65 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Prununciation",
-      "b": "Pronunciatoon",
-      "c": "Pronunciation",
-      "d": "Pranunciation"
+      "a": "Ponunciation",
+      "b": "Pronuncoation",
+      "c": "Pronunciateon",
+      "d": "Pronunciation"
     },
-    "correct_letter": "c",
+    "correct_letter": "d",
     "correct_word": "Pronunciation"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Qench",
-      "b": "Quench",
-      "c": "Quennch",
-      "d": "Quenc"
+      "a": "Quenc",
+      "b": "QQuench",
+      "c": "Quench",
+      "d": "Qoench"
     },
-    "correct_letter": "b",
+    "correct_letter": "c",
     "correct_word": "Quench"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Question",
-      "b": "Quustion",
-      "c": "Quetion",
-      "d": "Quastion"
+      "a": "Questian",
+      "b": "Question",
+      "c": "Qaestion",
+      "d": "Questio"
     },
-    "correct_letter": "a",
+    "correct_letter": "b",
     "correct_word": "Question"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Recaputre",
-      "b": "Recapture",
-      "c": "Recappture",
-      "d": "Reccapture"
+      "a": "Recaptuer",
+      "b": "Recaptre",
+      "c": "Recaptere",
+      "d": "Recapture"
     },
-    "correct_letter": "b",
+    "correct_letter": "d",
     "correct_word": "Recapture"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "eceive",
-      "b": "Raceive",
-      "c": "Receive",
-      "d": "Receivee"
+      "a": "Roceive",
+      "b": "Receive",
+      "c": "eRceive",
+      "d": "Receivo"
     },
-    "correct_letter": "c",
+    "correct_letter": "b",
     "correct_word": "Receive"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
       "a": "Received",
-      "b": "Receivd",
-      "c": "eceived",
-      "d": "Receivod"
+      "b": "Receied",
+      "c": "Receievd",
+      "d": "Receivad"
     },
     "correct_letter": "a",
     "correct_word": "Received"
@@ -1300,65 +1300,65 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Reefrred",
-      "b": "RReferred",
-      "c": "Referrud",
-      "d": "Referred"
+      "a": "Refered",
+      "b": "Referred",
+      "c": "Refurred",
+      "d": "Reforred"
     },
-    "correct_letter": "d",
+    "correct_letter": "b",
     "correct_word": "Referred"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Region",
-      "b": "RRegion",
-      "c": "Regionn",
-      "d": "Rogion"
+      "a": "Regino",
+      "b": "Rogion",
+      "c": "Region",
+      "d": "Regionn"
     },
-    "correct_letter": "a",
+    "correct_letter": "c",
     "correct_word": "Region"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Reinforcemet",
-      "b": "Reinforcmeent",
-      "c": "Reinforcement",
-      "d": "Reinforcment"
+      "a": "Reinforcement",
+      "b": "Renforcement",
+      "c": "Reinforceent",
+      "d": "Reinforcament"
     },
-    "correct_letter": "c",
+    "correct_letter": "a",
     "correct_word": "Reinforcement"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Relevant",
-      "b": "Releavnt",
-      "c": "Releant",
+      "a": "Relevvant",
+      "b": "Relevant",
+      "c": "Releevant",
       "d": "Reevant"
     },
-    "correct_letter": "a",
+    "correct_letter": "b",
     "correct_word": "Relevant"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Removal",
-      "b": "Removil",
-      "c": "Removol",
-      "d": "Removl"
+      "a": "Removval",
+      "b": "Ramoval",
+      "c": "Removal",
+      "d": "Remuval"
     },
-    "correct_letter": "a",
+    "correct_letter": "c",
     "correct_word": "Removal"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Repercussin",
-      "b": "Repercission",
+      "a": "Repercusison",
+      "b": "Reperucssion",
       "c": "Repercussion",
-      "d": "Rupercussion"
+      "d": "Reperrcussion"
     },
     "correct_letter": "c",
     "correct_word": "Repercussion"
@@ -1366,141 +1366,141 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Rupugnance",
-      "b": "Repugnance",
-      "c": "Rpeugnance",
-      "d": "Repugnancee"
+      "a": "Repugnance",
+      "b": "Repugnannce",
+      "c": "Repognance",
+      "d": "Repugnacne"
     },
-    "correct_letter": "b",
+    "correct_letter": "a",
     "correct_word": "Repugnance"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Restaurannt",
-      "b": "Restauraant",
-      "c": "Restaurant",
-      "d": "Restaurrant"
+      "a": "Restaurant",
+      "b": "Retsaurant",
+      "c": "Restaurnat",
+      "d": "Resaturant"
     },
-    "correct_letter": "c",
+    "correct_letter": "a",
     "correct_word": "Restaurant"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Rightious",
-      "b": "Righteos",
-      "c": "Righteous",
-      "d": "Righteoous"
+      "a": "Righteuus",
+      "b": "Righteous",
+      "c": "Righteois",
+      "d": "Rightuous"
     },
-    "correct_letter": "c",
+    "correct_letter": "b",
     "correct_word": "Righteous"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Sensition",
-      "b": "Sensatiun",
-      "c": "Senstion",
-      "d": "Sensation"
+      "a": "Senstion",
+      "b": "Sensation",
+      "c": "Snesation",
+      "d": "Sensatien"
     },
-    "correct_letter": "d",
+    "correct_letter": "b",
     "correct_word": "Sensation"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Settbacks",
-      "b": "Setbacks",
-      "c": "Setbecks",
-      "d": "Setbcks"
+      "a": "Setbaacks",
+      "b": "Setbucks",
+      "c": "SSetbacks",
+      "d": "Setbacks"
     },
-    "correct_letter": "b",
+    "correct_letter": "d",
     "correct_word": "Setbacks"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "SSovereignty",
-      "b": "Sovereignty",
+      "a": "Sovereignty",
+      "b": "Sovereognty",
       "c": "Soveraignty",
-      "d": "Sovereegnty"
+      "d": "Soevreignty"
     },
-    "correct_letter": "b",
+    "correct_letter": "a",
     "correct_word": "Sovereignty"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Succeed",
-      "b": "ucceed",
-      "c": "Succead",
-      "d": "Suucceed"
+      "a": "Succede",
+      "b": "Succeed",
+      "c": "Succeeed",
+      "d": "Succceed"
     },
-    "correct_letter": "a",
+    "correct_letter": "b",
     "correct_word": "Succeed"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Supersede",
-      "b": "Supersedi",
-      "c": "Supesrede",
-      "d": "Superseede"
+      "a": "Supeersede",
+      "b": "Supersede",
+      "c": "Superrsede",
+      "d": "Supersedu"
     },
-    "correct_letter": "a",
+    "correct_letter": "b",
     "correct_word": "Supersede"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Surreilism",
-      "b": "Surrealesm",
-      "c": "Surrelaism",
-      "d": "Surrealism"
+      "a": "Surrealism",
+      "b": "Surrualism",
+      "c": "uSrrealism",
+      "d": "SSurrealism"
     },
-    "correct_letter": "d",
+    "correct_letter": "a",
     "correct_word": "Surrealism"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Tangiblee",
-      "b": "Tangiible",
-      "c": "Tangiblle",
-      "d": "Tangible"
+      "a": "Tangbile",
+      "b": "Tangible",
+      "c": "Tengible",
+      "d": "Tangilbe"
     },
-    "correct_letter": "d",
+    "correct_letter": "b",
     "correct_word": "Tangible"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Technology",
-      "b": "Techhnology",
-      "c": "Technolagy",
-      "d": "Tcehnology"
+      "a": "Teechnology",
+      "b": "Technoligy",
+      "c": "Technology",
+      "d": "Tachnology"
     },
-    "correct_letter": "a",
+    "correct_letter": "c",
     "correct_word": "Technology"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Terrcaide",
-      "b": "Terracide",
-      "c": "Terrocide",
-      "d": "Terracidde"
+      "a": "Teerracide",
+      "b": "Terracode",
+      "c": "Terracide",
+      "d": "Tarracide"
     },
-    "correct_letter": "b",
+    "correct_letter": "c",
     "correct_word": "Terracide"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Terracitta",
-      "b": "Terracatta",
-      "c": "Terractta",
+      "a": "Terracotat",
+      "b": "Terracotti",
+      "c": "Teerracotta",
       "d": "Terracotta"
     },
     "correct_letter": "d",
@@ -1509,21 +1509,21 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Tretial",
-      "b": "Tertial",
-      "c": "ertial",
-      "d": "Trtial"
+      "a": "Tertial",
+      "b": "Tertiall",
+      "c": "Tertoal",
+      "d": "Tetial"
     },
-    "correct_letter": "b",
+    "correct_letter": "a",
     "correct_word": "Tertial"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Trialss",
-      "b": "Trialls",
+      "a": "Trial",
+      "b": "Treals",
       "c": "Trials",
-      "d": "Trias"
+      "d": "Triils"
     },
     "correct_letter": "c",
     "correct_word": "Trials"
@@ -1531,42 +1531,42 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "TTruly",
-      "b": "Traly",
-      "c": "Truly",
-      "d": "Tuly"
+      "a": "ruly",
+      "b": "Truly",
+      "c": "TTruly",
+      "d": "Traly"
     },
-    "correct_letter": "c",
+    "correct_letter": "b",
     "correct_word": "Truly"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Tumbler",
-      "b": "Tubmler",
-      "c": "Timbler",
-      "d": "Tombler"
+      "a": "Tumbbler",
+      "b": "Tumbler",
+      "c": "Tumblar",
+      "d": "Tumblr"
     },
-    "correct_letter": "a",
+    "correct_letter": "b",
     "correct_word": "Tumbler"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Unoreseen",
-      "b": "Unforeeen",
-      "c": "Unforeseen",
-      "d": "Unfereseen"
+      "a": "Unforeseen",
+      "b": "Unnforeseen",
+      "c": "Unforseeen",
+      "d": "Unfoeseen"
     },
-    "correct_letter": "c",
+    "correct_letter": "a",
     "correct_word": "Unforeseen"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Upstoirs",
-      "b": "Upstiars",
-      "c": "Upstaors",
+      "a": "Upsteirs",
+      "b": "Upsttairs",
+      "c": "Upstaers",
       "d": "Upstairs"
     },
     "correct_letter": "d",
@@ -1575,20 +1575,20 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Vrifiability",
-      "b": "Verifiability",
-      "c": "Verifiibility",
-      "d": "Verifiabiliyt"
+      "a": "Verifiability",
+      "b": "Veirfiability",
+      "c": "Verrifiability",
+      "d": "eVrifiability"
     },
-    "correct_letter": "b",
+    "correct_letter": "a",
     "correct_word": "Verifiability"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "VVerminous",
-      "b": "Verminius",
-      "c": "Verminuos",
+      "a": "Verminoes",
+      "b": "Vermnous",
+      "c": "Verminoous",
       "d": "Verminous"
     },
     "correct_letter": "d",
@@ -1597,34 +1597,34 @@
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Vouptuous",
-      "b": "Viluptuous",
-      "c": "Voluptuous",
-      "d": "Voluptuouus"
+      "a": "Voluptuous",
+      "b": "Volutpuous",
+      "c": "Volutuous",
+      "d": "oVluptuous"
     },
-    "correct_letter": "c",
+    "correct_letter": "a",
     "correct_word": "Voluptuous"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Vomituus",
-      "b": "oVmitus",
-      "c": "Vomitus",
-      "d": "Vomotus"
+      "a": "Vomitus",
+      "b": "Vomitsu",
+      "c": "Vimitus",
+      "d": "Vomitos"
     },
-    "correct_letter": "c",
+    "correct_letter": "a",
     "correct_word": "Vomitus"
   },
   {
     "question": "Choose the correctly spelled word:",
     "options": {
-      "a": "Weathor",
-      "b": "Weeather",
-      "c": "Weather",
-      "d": "Weathur"
+      "a": "Weater",
+      "b": "Weather",
+      "c": "Weathir",
+      "d": "Weether"
     },
-    "correct_letter": "c",
+    "correct_letter": "b",
     "correct_word": "Weather"
   }
 ]
