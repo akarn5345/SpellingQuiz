@@ -34,20 +34,24 @@ def generate_fishy_option(word):
     variations.discard(word)
     return random.choice(list(variations)) if variations else word + random.choice('xyz')
 
-# ✅ FIX: Use simple CSV reader
+# Read from CSV and store (word, year) tuples
 words = []
 with open('word_list.csv', newline='') as csvfile:
     reader = csv.reader(csvfile)
-    next(reader)  # skip header
+    next(reader)  # Skip header if present, comment out if not
     for row in reader:
-        if row:
+        if len(row) >= 2:
             word = row[0].strip()
+            try:
+                year = int(row[1].strip())
+            except ValueError:
+                continue
             if word:
-                words.append(word)
+                words.append((word, year))
 
 quiz = []
 
-for word in words:
+for word, year in words:
     incorrect = set()
     while len(incorrect) < 3:
         wrong = generate_fishy_option(word)
@@ -65,7 +69,8 @@ for word in words:
         "question": "Choose the correctly spelled word:",
         "options": options_dict,
         "correct_letter": correct_letter,
-        "correct_word": word
+        "correct_word": word,
+        "year": year
     })
 
 with open('quiz_data.json', 'w') as f:
