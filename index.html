@@ -186,12 +186,21 @@ function checkAnswer(btn, correctLetter, correctValue) {
     score++;
   } else {
     btn.style.backgroundColor = 'lightcoral';
-    buttons.forEach(b => {
-      if (b.dataset.correct === "true") {
-        b.style.backgroundColor = 'lightgreen';
-      }
-    });
   }
+
+  const scoreDiv = document.querySelector('.score');
+  if (scoreDiv) {
+    scoreDiv.textContent = `Score: ${score} / ${selectedQuestions.length}`;
+  }
+
+  const allButtons = document.querySelectorAll('.question-block button:not([disabled])');
+  if (allButtons.length === 0) {
+    const resultMsg = document.getElementById('result-msg');
+    const percent = (score / selectedQuestions.length) * 100;
+    resultMsg.textContent = percent >= 50 ? "✅ Passed!" : "❌ Failed. Try Again.";
+    resultMsg.style.color = percent >= 50 ? "green" : "red";
+  }
+}
 
   const scoreDiv = document.querySelector('.score');
   if (scoreDiv) {
