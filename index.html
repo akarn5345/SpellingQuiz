@@ -177,7 +177,9 @@
     }
 
     function checkAnswer(selected, correct, correctWord, btn) {
-      const buttons = btn.parentElement.parentElement.querySelectorAll("button");
+      const questionBlock = btn.closest('.question-block');
+      const buttons = questionBlock.querySelectorAll("button");
+
       buttons.forEach(b => b.disabled = true);
 
       if (selected === correct) {
@@ -186,7 +188,7 @@
       } else {
         btn.style.backgroundColor = 'lightcoral';
         buttons.forEach(b => {
-          if (b.innerText === correctWord) {
+          if (b.textContent.trim() === correctWord) {
             b.style.backgroundColor = 'lightgreen';
           }
         });
@@ -197,7 +199,8 @@
         scoreDiv.textContent = `Score: ${score} / ${selectedQuestions.length}`;
       }
 
-      if (document.querySelectorAll('button:not([disabled])').length === 0) {
+      const remaining = document.querySelectorAll('.question-block button:not([disabled])');
+      if (remaining.length === 0) {
         const resultMsg = document.getElementById('result-msg');
         const percent = (score / selectedQuestions.length) * 100;
         resultMsg.textContent = percent >= 50 ? "✅ Passed!" : "❌ Failed. Try Again.";
