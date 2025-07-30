@@ -1,13 +1,14 @@
 name: Generate Quiz JSON
 
 permissions:
-  contents: write  # 👈 Needed to allow git push
+  contents: write
 
 on:
   push:
     paths:
       - 'word_list.csv'
       - 'generate_quiz.py'
+      - 'quiz_data.json'  # optional, for clarity
   workflow_dispatch:
 
 jobs:
