@@ -145,68 +145,70 @@
       displayAllQuestions();
     }
 
-    function displayAllQuestions() {
-      const container = document.getElementById('quiz-container');
-      container.innerHTML = '';
-      selectedQuestions.forEach((q, index) => {
-        const prompt = questionPrompts[Math.floor(Math.random() * questionPrompts.length)];
-        const div = document.createElement('div');
-        div.className = 'question-block';
-        div.innerHTML = `
-          <h3>Q${index + 1}. ${prompt}</h3>
-          <ul>
-            ${Object.entries(q.options).map(([key, val]) => `
-              <li>
-                <button onclick="checkAnswer('${key}', '${q.correct_letter}', '${val}', this)">${val}</button>
-              </li>
-            `).join('')}
-          </ul>
-        `;
-        container.appendChild(div);
-      });
+   function displayAllQuestions() {
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+  selectedQuestions.forEach((q, index) => {
+    const prompt = questionPrompts[Math.floor(Math.random() * questionPrompts.length)];
+    const div = document.createElement('div');
+    div.className = 'question-block';
+    div.innerHTML = `
+      <h3>Q${index + 1}. ${prompt}</h3>
+      <ul>
+        ${Object.entries(q.options).map(([key, val]) => `
+          <li>
+            <button data-correct="${key === q.correct_letter}" data-value="${val}" onclick="checkAnswer(this, '${q.correct_letter}', '${q.options[q.correct_letter]}')">${val}</button>
+          </li>
+        `).join('')}
+      </ul>
+    `;
+    container.appendChild(div);
+  });
 
-      const scoreDiv = document.createElement('div');
-      scoreDiv.className = 'score';
-      scoreDiv.textContent = `Score: 0 / ${selectedQuestions.length}`;
-      container.appendChild(scoreDiv);
+  const scoreDiv = document.createElement('div');
+  scoreDiv.className = 'score';
+  scoreDiv.textContent = `Score: 0 / ${selectedQuestions.length}`;
+  container.appendChild(scoreDiv);
 
-      const resultDiv = document.createElement('div');
-      resultDiv.className = 'result';
-      resultDiv.id = 'result-msg';
-      container.appendChild(resultDiv);
-    }
+  const resultDiv = document.createElement('div');
+  resultDiv.className = 'result';
+  resultDiv.id = 'result-msg';
+  container.appendChild(resultDiv);
+}
 
-    function checkAnswer(selected, correct, correctWord, btn) {
-      const questionBlock = btn.closest('.question-block');
-      const buttons = questionBlock.querySelectorAll("button");
+function checkAnswer(btn, correctLetter, correctValue) {
+  const questionBlock = btn.closest('.question-block');
+  const buttons = questionBlock.querySelectorAll("button");
+  buttons.forEach(b => b.disabled = true);
 
-      buttons.forEach(b => b.disabled = true);
-
-      if (selected === correct) {
-        btn.style.backgroundColor = 'lightgreen';
-        score++;
-      } else {
-        btn.style.backgroundColor = 'lightcoral';
-        buttons.forEach(b => {
-          if (b.textContent.trim() === correctWord) {
-            b.style.backgroundColor = 'lightgreen';
-          }
-        });
+  if (btn.dataset.correct === "true") {
+    btn.style.backgroundColor = 'lightgreen';
+    score++;
+  } else {
+    btn.style.backgroundColor = 'lightcoral';
+    buttons.forEach(b => {
+      if (b.dataset.correct === "true") {
+        b.style.backgroundColor = 'lightgreen';
       }
+    });
+  }
 
-      const scoreDiv = document.querySelector('.score');
-      if (scoreDiv) {
-        scoreDiv.textContent = `Score: ${score} / ${selectedQuestions.length}`;
-      }
+  const scoreDiv = document.querySelector('.score');
+  if (scoreDiv) {
+    scoreDiv.textContent = `Score: ${score} / ${selectedQuestions.length}`;
+  }
 
-      const remaining = document.querySelectorAll('.question-block button:not([disabled])');
-      if (remaining.length === 0) {
-        const resultMsg = document.getElementById('result-msg');
-        const percent = (score / selectedQuestions.length) * 100;
-        resultMsg.textContent = percent >= 50 ? "✅ Passed!" : "❌ Failed. Try Again.";
-        resultMsg.style.color = percent >= 50 ? "green" : "red";
-      }
-    }
+  const allButtons = document.querySelectorAll('.question-block button:not([disabled])');
+  if (allButtons.length === 0) {
+    const resultMsg = document.getElementById('result-msg');
+    const percent = (score / selectedQuestions.length) * 100;
+    resultMsg.textContent = percent >= 50 ? "✅ Passed!" : "❌ Failed. Try Again.";
+    resultMsg.style.color = percent >= 50 ? "green" : "red";
+  }
+}
+
+
+
 
     function adjustFontSize(change) {
       fontSize += change;
