@@ -1,79 +1,58 @@
 import csv
-import random
 import json
+import random
 
-def generate_fishy_option(word):
-    if len(word) < 3:
-        return word + random.choice('aeiou')
+def format_word(word):
+    word = word.strip().lower()
+    return word.capitalize()
 
-    variations = set()
-    vowels = 'aeiou'
+def generate_options(correct_word, all_words):
+    first_letter = correct_word[0].lower()
+    correct_word = format_word(correct_word)
+    wrong_options = []
 
-    # Replace vowels
-    for i, char in enumerate(word):
-        if char.lower() in vowels:
-            for v in vowels:
-                if v != char.lower():
-                    variations.add(word[:i] + v + word[i+1:])
+    # Filter out words with same first letter but different from correct word
+    candidates = [w for w in all_words if w.lower() != correct_word.lower() and w[0].lower() == first_letter]
 
-    # Duplicate characters
-    for i in range(len(word)):
-        variations.add(word[:i] + word[i] * 2 + word[i+1:])
+    # Make sure to pick 3 unique incorrect options
+    while len(wrong_options) < 3 and candidates:
+        choice = format_word(random.choice(candidates))
+        if choice not in wrong_options:
+            wrong_options.append(choice)
 
-    # Remove characters
-    if len(word) > 4:
-        for i in range(len(word)):
-            variations.add(word[:i] + word[i+1:])
+    all_choices = wrong_options + [correct_word]
+    random.shuffle(all_choices)
 
-    # Swap adjacent letters
-    for i in range(len(word) - 1):
-        swapped = list(word)
-        swapped[i], swapped[i + 1] = swapped[i + 1], swapped[i]
-        variations.add(''.join(swapped))
+    correct_letter = chr(ord('A') + all_choices.index(correct_word))
+    options_dict = {chr(ord('A') + i): word for i, word in enumerate(all_choices)}
 
-    variations.discard(word)
-    return random.choice(list(variations)) if variations else word + random.choice('xyz')
+    return options_dict, correct_letter
 
-# Read from CSV and store (word, year) tuples
-words = []
-with open('word_list.csv', newline='') as csvfile:
-    reader = csv.reader(csvfile)
-    next(reader)  # Skip header if present, comment out if not
-    for row in reader:
-        if len(row) >= 2:
-            word = row[0].strip()
-            try:
-                year = int(row[1].strip())
-            except ValueError:
-                continue
-            if word:
-                words.append((word, year))
+def generate_quiz_data(input_csv, output_json):
+    all_words = []
+    questions = []
 
-quiz = []
+    with open(input_csv, newline='', encoding='utf-8') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            all_words.append(row['Word'])
 
-for word, year in words:
-    incorrect = set()
-    while len(incorrect) < 3:
-        wrong = generate_fishy_option(word)
-        if wrong != word:
-            incorrect.add(wrong)
+    with open(input_csv, newline='', encoding='utf-8') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            correct_word = row['Word']
+            year = row.get('Year', '2024')
+            options, correct_letter = generate_options(correct_word, all_words)
+            question = {
+                "correct_word": format_word(correct_word),
+                "options": options,
+                "correct_letter": correct_letter,
+                "year": year
+            }
+            questions.append(question)
 
-    options = [word] + list(incorrect)
-    random.shuffle(options)
+    with open(output_json, 'w', encoding='utf-8') as f:
+        json.dump(questions, f, ensure_ascii=False, indent=2)
 
-    option_keys = ['a', 'b', 'c', 'd']
-    options_dict = dict(zip(option_keys, options))
-    correct_letter = [k for k, v in options_dict.items() if v == word][0]
-
-    quiz.append({
-        "question": "Choose the correctly spelled word:",
-        "options": options_dict,
-        "correct_letter": correct_letter,
-        "correct_word": word,
-        "year": year
-    })
-
-with open('quiz_data.json', 'w') as f:
-    json.dump(quiz, f, indent=2)
-
-print("✅ quiz_data.json generated successfully.")
+# Run this function with actual file paths
+generate_quiz_data("word_list.csv", "quiz_data.json")
