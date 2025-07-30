@@ -66,9 +66,12 @@ output_json = 'quiz_data.json'
 quiz_data = []
 year_counter = Counter()
 
-# Read once
+# Read CSV and normalize headers
 with open(input_csv, newline='', encoding='utf-8') as csvfile:
-    rows = list(csv.DictReader(csvfile))
+    reader = csv.DictReader(csvfile)
+    reader.fieldnames = [fn.strip() for fn in reader.fieldnames]  # Trim spaces from headers
+    rows = list(reader)
+
     all_words = [row['Word'] for row in rows if 'Word' in row and row['Word'].strip()]
 
     for row in rows:
@@ -76,9 +79,10 @@ with open(input_csv, newline='', encoding='utf-8') as csvfile:
             continue
 
         correct_word = row['Word'].strip()
-        year = row.get('Year', '').strip()
-        if not year:
-            year = '2024'  # fallback default
+
+        # Handle Year with cleanup
+        year_raw = row.get('Year')
+        year = year_raw.strip() if year_raw and year_raw.strip() else '2024'
 
         year_counter[year] += 1
 
