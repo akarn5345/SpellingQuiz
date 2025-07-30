@@ -1,58 +1,66 @@
 import csv
 import json
 import random
+from collections import defaultdict
 
+# Format the word
 def format_word(word):
-    word = word.strip().lower()
-    return word.capitalize()
+    return word.strip().capitalize()
 
+# Generate wrong options
 def generate_options(correct_word, all_words):
     first_letter = correct_word[0].lower()
-    correct_word = format_word(correct_word)
+    same_letter_words = [w for w in all_words if w.lower().startswith(first_letter) and w.lower() != correct_word.lower()]
+    random.shuffle(same_letter_words)
     wrong_options = []
 
-    # Filter out words with same first letter but different from correct word
-    candidates = [w for w in all_words if w.lower() != correct_word.lower() and w[0].lower() == first_letter]
+    for w in same_letter_words:
+        if format_word(w) not in wrong_options and len(wrong_options) < 3:
+            wrong_options.append(format_word(w))
 
-    # Make sure to pick 3 unique incorrect options
-    while len(wrong_options) < 3 and candidates:
-        choice = format_word(random.choice(candidates))
-        if choice not in wrong_options:
-            wrong_options.append(choice)
+    if len(wrong_options) < 3:
+        fallback = [w for w in all_words if w.lower() != correct_word.lower() and format_word(w) not in wrong_options]
+        random.shuffle(fallback)
+        for w in fallback:
+            if len(wrong_options) >= 3:
+                break
+            wrong_options.append(format_word(w))
 
-    all_choices = wrong_options + [correct_word]
-    random.shuffle(all_choices)
+    options = wrong_options + [format_word(correct_word)]
+    random.shuffle(options)
 
-    correct_letter = chr(ord('A') + all_choices.index(correct_word))
-    options_dict = {chr(ord('A') + i): word for i, word in enumerate(all_choices)}
+    labeled_options = dict(zip(['A', 'B', 'C', 'D'], options))
+    correct_letter = [k for k, v in labeled_options.items() if v == format_word(correct_word)][0]
 
-    return options_dict, correct_letter
+    return labeled_options, correct_letter
 
-def generate_quiz_data(input_csv, output_json):
-    all_words = []
-    questions = []
+# Generate the quiz
+input_csv = 'word_list.csv'
+output_json = 'quiz_data.json'
 
-    with open(input_csv, newline='', encoding='utf-8') as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            all_words.append(row['Word'])
+quiz_data = []
 
-    with open(input_csv, newline='', encoding='utf-8') as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            correct_word = row['Word']
-            year = row.get('Year', '2024')
-            options, correct_letter = generate_options(correct_word, all_words)
-            question = {
-                "correct_word": format_word(correct_word),
-                "options": options,
-                "correct_letter": correct_letter,
-                "year": year
-            }
-            questions.append(question)
+with open(input_csv, newline='', encoding='utf-8') as csvfile:
+    reader = list(csv.DictReader(csvfile))
+    all_words = [row['Word'] for row in reader if 'Word' in row and row['Word'].strip()]
 
-    with open(output_json, 'w', encoding='utf-8') as f:
-        json.dump(questions, f, ensure_ascii=False, indent=2)
+    for row in reader:
+        if 'Word' not in row or not row['Word'].strip():
+            continue
 
-# Run this function with actual file paths
-generate_quiz_data("word_list.csv", "quiz_data.json")
+        correct_word = row['Word'].strip()
+        year = row.get('Year') or '2024'
+
+        options, correct_letter = generate_options(correct_word, all_words)
+
+        quiz_data.append({
+            'correct_word': format_word(correct_word),
+            'year': year,
+            'options': options,
+            'correct_letter': correct_letter
+        })
+
+with open(output_json, 'w', encoding='utf-8') as jsonfile:
+    json.dump(quiz_data, jsonfile, indent=2, ensure_ascii=False)
+
+print(f"Quiz data written to {output_json} with {len(quiz_data)} questions.")
