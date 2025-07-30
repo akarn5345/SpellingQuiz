@@ -6,25 +6,44 @@
   <title>Spelling Quiz</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       padding: 20px;
-      background-color: #f9f9f9;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      color: #333;
     }
-    .year-buttons button {
-      margin: 5px;
-      padding: 10px 15px;
+    .year-buttons {
+      margin-bottom: 20px;
+    }
+    .year-buttons label {
+      margin-right: 10px;
+      font-weight: 500;
+    }
+    .year-buttons input[type="checkbox"] {
+      margin-right: 5px;
+    }
+    button.start-btn {
+      padding: 10px 20px;
       font-size: 16px;
       cursor: pointer;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      margin-top: 10px;
     }
     .quiz-container {
       margin-top: 20px;
     }
     .question-block {
       margin-bottom: 20px;
-      padding: 10px;
+      padding: 15px;
       background-color: #fff;
       border: 1px solid #ccc;
       border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .question-block h3 {
+      margin-bottom: 10px;
     }
     .question-block ul {
       list-style: none;
@@ -35,72 +54,118 @@
     }
     .question-block button {
       width: 100%;
-      padding: 8px;
+      padding: 10px;
       font-size: 16px;
+      border: 1px solid #007acc;
+      border-radius: 4px;
+      background-color: #f0f8ff;
+      cursor: pointer;
+    }
+    .score {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
   <h1>Spelling Quiz</h1>
   <div class="year-buttons">
-    <button onclick="loadQuiz(2022)">2022</button>
-    <button onclick="loadQuiz(2023)">2023</button>
-    <button onclick="loadQuiz(2024)">2024</button>
+    <label><input type="checkbox" value="2022" />2022</label>
+    <label><input type="checkbox" value="2023" />2023</label>
+    <label><input type="checkbox" value="2024" />2024</label>
+    <br>
+    <button class="start-btn" onclick="startQuiz()">Start Quiz</button>
   </div>
 
   <div class="quiz-container" id="quiz-container">
-    <p>Select a year to begin the quiz.</p>
+    <p>Select year(s) and click "Start Quiz".</p>
   </div>
 
   <script>
     let quizData = [];
+    let usedQuestions = new Set();
+    let score = 0;
+    let currentQuestionIndex = 0;
+    let selectedQuestions = [];
 
-    async function loadQuiz(year) {
+    async function startQuiz() {
       const res = await fetch('quiz_data.json');
       const data = await res.json();
-      quizData = data.filter(q => String(q.year) === String(year));
-      displayQuiz(quizData);
-    }
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+      const selectedYears = Array.from(checkboxes).map(cb => cb.value);
 
-    function displayQuiz(questions) {
-      const container = document.getElementById('quiz-container');
-      container.innerHTML = '';
-
-      if (questions.length === 0) {
-        container.innerHTML = '<p>No questions found for this year.</p>';
+      if (selectedYears.length === 0) {
+        alert("Please select at least one year.");
         return;
       }
 
-      questions.forEach((q, index) => {
-        const div = document.createElement('div');
-        div.className = 'question-block';
-        div.innerHTML = `
-          <h3>Q${index + 1}. ${q.question}</h3>
-          <ul>
-            ${Object.entries(q.options).map(([key, val]) => `
-              <li>
-                <button onclick="checkAnswer('${key}', '${q.correct_letter}', this)">${val}</button>
-              </li>
-            `).join('')}
-          </ul>
-        `;
-        container.appendChild(div);
-      });
+      quizData = data.filter(q => selectedYears.includes(String(q.year)));
+      if (quizData.length === 0) {
+        document.getElementById('quiz-container').innerHTML = '<p>No questions found for selected years.</p>';
+        return;
+      }
+
+      // Shuffle and select 25 unique questions
+      shuffleArray(quizData);
+      selectedQuestions = quizData.filter(q => !usedQuestions.has(q.correct_word)).slice(0, 25);
+      selectedQuestions.forEach(q => usedQuestions.add(q.correct_word));
+      score = 0;
+      currentQuestionIndex = 0;
+
+      displayQuestion();
     }
 
-    function checkAnswer(selected, correct, btn) {
+    function displayQuestion() {
+      const container = document.getElementById('quiz-container');
+      container.innerHTML = '';
+      if (currentQuestionIndex >= selectedQuestions.length) {
+        container.innerHTML = `<div class="score">Quiz Complete! Your score: ${score} / ${selectedQuestions.length}</div>`;
+        return;
+      }
+
+      const q = selectedQuestions[currentQuestionIndex];
+      const div = document.createElement('div');
+      div.className = 'question-block';
+      div.innerHTML = `
+        <h3>Q${currentQuestionIndex + 1}. ${q.question}</h3>
+        <ul>
+          ${Object.entries(q.options).map(([key, val]) => `
+            <li>
+              <button onclick="checkAnswer('${key}', '${q.correct_letter}', '${val}', this)">${val}</button>
+            </li>
+          `).join('')}
+        </ul>
+      `;
+      container.appendChild(div);
+    }
+
+    function checkAnswer(selected, correct, correctWord, btn) {
       const buttons = btn.parentElement.parentElement.querySelectorAll("button");
       buttons.forEach(b => b.disabled = true);
 
       if (selected === correct) {
         btn.style.backgroundColor = 'lightgreen';
+        score++;
       } else {
         btn.style.backgroundColor = 'lightcoral';
         buttons.forEach(b => {
-          if (b.innerText === btn.parentElement.parentElement.parentElement.dataset.correctWord) {
+          if (b.innerText === correctWord) {
             b.style.backgroundColor = 'lightgreen';
           }
         });
+      }
+
+      setTimeout(() => {
+        currentQuestionIndex++;
+        displayQuestion();
+      }, 800);
+    }
+
+    function shuffleArray(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
       }
     }
   </script>
