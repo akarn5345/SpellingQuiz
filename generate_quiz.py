@@ -9,19 +9,23 @@ def generate_fishy_option(word):
     variations = set()
     vowels = 'aeiou'
 
+    # Replace vowels
     for i, char in enumerate(word):
         if char.lower() in vowels:
             for v in vowels:
                 if v != char.lower():
                     variations.add(word[:i] + v + word[i+1:])
 
+    # Duplicate characters
     for i in range(len(word)):
         variations.add(word[:i] + word[i] * 2 + word[i+1:])
 
+    # Remove characters
     if len(word) > 4:
         for i in range(len(word)):
             variations.add(word[:i] + word[i+1:])
 
+    # Swap adjacent letters
     for i in range(len(word) - 1):
         swapped = list(word)
         swapped[i], swapped[i + 1] = swapped[i + 1], swapped[i]
@@ -30,14 +34,16 @@ def generate_fishy_option(word):
     variations.discard(word)
     return random.choice(list(variations)) if variations else word + random.choice('xyz')
 
-
+# ✅ FIX: Use simple CSV reader
 words = []
 with open('word_list.csv', newline='') as csvfile:
-    reader = csv.DictReader(csvfile)
+    reader = csv.reader(csvfile)
+    next(reader)  # skip header
     for row in reader:
-        word = row.get('Word', '').strip()
-        if word:
-            words.append(word)
+        if row:
+            word = row[0].strip()
+            if word:
+                words.append(word)
 
 quiz = []
 
