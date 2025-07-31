@@ -143,19 +143,25 @@
     <br>
     <button class="start-btn" onclick="startQuiz()">Start Quiz</button>
   </div>
+
   <div class="font-controls">
     <label>Adjust Font Size:</label>
     <button onclick="adjustFontSize(1)">A+</button>
     <button onclick="adjustFontSize(-1)">A-</button>
   </div>
+
   <div id="timer" class="timer" style="display:none;"></div>
+
   <div class="quiz-container" id="quiz-container">
     <p>Select year(s) and click "Start Quiz".</p>
-    </div>
-    <div class="score-summary" id="score-summary"></div>
+  </div>
+
+  <div class="score-summary" id="score-summary"></div>
   <button class="submit-btn" id="submit-btn" onclick="submitQuiz()" style="display:none;">Submit</button>
   <button class="retry-btn" id="retry-btn" onclick="startQuiz()" style="display:none;">Retry</button>
+
   <script>
+
     let quizData = [];
     let usedQuestions = new Set();
     let score = 0;
