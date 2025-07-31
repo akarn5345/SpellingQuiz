@@ -1,131 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spelling Quiz</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'Noto Sans Devanagari', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       padding: 20px;
       background: linear-gradient(to right, #e0eafc, #cfdef3);
+    }
+
+    h1 {
       color: #333;
-      max-width: 800px;
-      margin: 0 auto;
+      text-align: center;
     }
-    .year-buttons {
-      margin-bottom: 20px;
+
+    .year-buttons, .font-controls {
+      margin: 10px 0;
+      text-align: center;
     }
-    .year-buttons label {
-      margin-right: 10px;
-      font-weight: 500;
-    }
-    .year-buttons input[type="checkbox"] {
-      margin-right: 5px;
-    }
-    button.start-btn {
+
+    .start-btn, .submit-btn, .retry-btn {
+      margin-top: 10px;
       padding: 10px 20px;
       font-size: 16px;
       cursor: pointer;
-      background-color: #007acc;
+      background-color: #4CAF50;
       color: white;
       border: none;
-      border-radius: 4px;
-      margin-top: 10px;
+      border-radius: 5px;
     }
-    .font-controls {
-      margin: 10px 0;
+
+    .start-btn:hover, .submit-btn:hover, .retry-btn:hover {
+      background-color: #45a049;
     }
-    .font-controls button {
-      margin-right: 10px;
-      padding: 5px 10px;
-    }
+
     .quiz-container {
       margin-top: 20px;
     }
+
     .question-block {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       padding: 10px;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      text-align: center;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 5px;
     }
-    .question-block h3 {
-      margin-bottom: 10px;
-      font-size: 1.05em;
-    }
-    .question-block ul {
-      list-style: none;
-      padding: 0;
-    }
-    .question-block li {
-      margin: 5px 0;
-    }
-    .question-block button {
-      width: auto;
-      min-width: 120px;
-      max-width: 90%;
-      padding: 8px 16px;
-      font-size: 16px;
-      border: 1px solid #007acc;
-      border-radius: 4px;
-      background-color: #f0f8ff;
-      cursor: pointer;
-      transition: opacity 0.3s, color 0.3s, font-weight 0.3s, background 0.3s;
-    }
-    .score {
-      font-size: 18px;
-      font-weight: bold;
-      margin-top: 20px;
-      text-align: center;
-    }
-    .result {
-      font-size: 20px;
-      font-weight: bold;
-      margin-top: 10px;
-      text-align: center;
-    }
-    .timer {
-      font-size: 22px;
-      font-weight: bold;
-      color: #333;
-      text-align: center;
-      margin-bottom: 12px;
-      letter-spacing: 1px;
-    }
-    .question-count-select {
-      margin-bottom: 10px;
-      font-size: 16px;
-    }
-    /* Styles for quiz answer feedback */
+
     .correct-answer {
-      background: #d4ffd4 !important;
-      color: #218838 !important;
-      font-weight: bold !important;
-      border-color: #218838 !important;
-      opacity: 1 !important;
+      background-color: #d4edda;
+      border-color: #28a745;
+      color: #155724;
     }
-    .selected-wrong {
-      background: #ffd6d6 !important;
-      color: #c82333 !important;
-      font-weight: normal !important;
-      border-color: #c82333 !important;
-      opacity: 1 !important;
+
+    .wrong {
+      background-color: #f8d7da;
+      border-color: #dc3545;
+      color: #721c24;
+      opacity: 0.6;
     }
-    .dimmed {
-      opacity: 0.5;
-      color: #aaa !important;
-      font-weight: normal !important;
-      background: #f0f8ff !important;
-      border-color: #007acc !important;
-    }
-    .hindi-meaning-div {
-      margin-top: 7px;
+
+    .timer {
       font-weight: bold;
-      color: #444;
-      font-family: 'Noto Sans Devanagari', sans-serif;
+      margin: 10px;
+      text-align: center;
     }
   </style>
 </head>
@@ -143,211 +77,50 @@
     <br>
     <button class="start-btn" onclick="startQuiz()">Start Quiz</button>
   </div>
-
   <div class="font-controls">
     <label>Adjust Font Size:</label>
     <button onclick="adjustFontSize(1)">A+</button>
     <button onclick="adjustFontSize(-1)">A-</button>
   </div>
-
   <div id="timer" class="timer" style="display:none;"></div>
-
-  <div class="quiz-container" id="quiz-container">
-    <p>Select year(s) and click "Start Quiz".</p>
-  </div>
-
+  <p>Select year(s) and click "Start Quiz".</p>
+  <div class="quiz-container" id="quiz-container"></div>
   <div class="score-summary" id="score-summary"></div>
   <button class="submit-btn" id="submit-btn" onclick="submitQuiz()" style="display:none;">Submit</button>
   <button class="retry-btn" id="retry-btn" onclick="startQuiz()" style="display:none;">Retry</button>
-
   <script>
+    function startQuiz() {
+      // Your existing logic for starting quiz...
+      document.getElementById("submit-btn").style.display = "inline-block";
+      document.getElementById("retry-btn").style.display = "none";
+      document.getElementById("score-summary").innerHTML = "";
 
-    let quizData = [];
-    let usedQuestions = new Set();
-    let score = 0;
-    let selectedQuestions = [];
-    let fontSize = 16;
-    const questionPrompts = [
-      "Which of these is correctly spelled?",
-      "Pick the right spelling:",
-      "Choose the correct form:",
-      "Spot the correct word:",
-      "Correct spelt word:"
-    ];
+      // Hide previous content and reset UI if needed
+      const container = document.getElementById("quiz-container");
+      container.innerHTML = ""; // Reset quiz container
 
-    let timerInterval = null;
-    let timeLeft = 600; // 10 minutes in seconds by default
-
-    function displayTimer() {
-      const timerDiv = document.getElementById('timer');
-      const minutes = Math.floor(timeLeft / 60);
-      const seconds = timeLeft % 60;
-      timerDiv.textContent = `Time Left: ${minutes}:${seconds.toString().padStart(2, '0')}`;
+      // Example of populating questions (can be replaced with actual logic)
+      for (let i = 1; i <= 5; i++) {
+        const block = document.createElement('div');
+        block.className = 'question-block';
+        block.innerHTML = `<p>Q${i}. Sample question?</p>`;
+        container.appendChild(block);
+      }
     }
 
-    function startTimer() {
-      displayTimer();
-      document.getElementById('timer').style.display = 'block';
-      if (timerInterval) clearInterval(timerInterval);
-      timerInterval = setInterval(() => {
-        timeLeft--;
-        displayTimer();
-        if (timeLeft <= 0) {
-          clearInterval(timerInterval);
-          endQuizDueToTimeout();
-        }
-      }, 1000);
-    }
-
-    function endQuizDueToTimeout() {
-      // Disable all answer buttons
-      document.querySelectorAll('.question-block button').forEach(btn => btn.disabled = true);
-      // Show time out message
-      const resultMsg = document.getElementById('result-msg');
-      resultMsg.textContent = "⏰ Time's up!";
-      resultMsg.style.color = "orange";
-    }
-
-    async function startQuiz() {
-      const res = await fetch('quiz_data.json');
-      const data = await res.json();
-      const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-      const selectedYears = Array.from(checkboxes).map(cb => cb.value);
-
-      // Get question count based on user selection
-      const countRadios = document.querySelectorAll('input[name="question-count"]:checked');
-      const questionCount = countRadios.length ? parseInt(countRadios[0].value) : 25;
-
-      // Set timer based on question count
-      if (questionCount === 50) {
-        timeLeft = 1200; // 20 minutes
-      } else {
-        timeLeft = 600; // 10 minutes
-      }
-
-      if (selectedYears.length === 0) {
-        alert("Please select at least one year.");
-        return;
-      }
-
-      quizData = data.filter(q => selectedYears.includes(String(q.year)));
-      if (quizData.length === 0) {
-        document.getElementById('quiz-container').innerHTML = '<p>No questions found for selected years.</p>';
-        document.getElementById('timer').style.display = 'none';
-        return;
-      }
-
-      shuffleArray(quizData);
-      selectedQuestions = quizData.filter(q => !usedQuestions.has(q.correct_word)).slice(0, questionCount);
-      selectedQuestions.forEach(q => usedQuestions.add(q.correct_word));
-      score = 0;
-
-      displayAllQuestions();
-      startTimer();
-    }
-
-    function displayAllQuestions() {
-      const container = document.getElementById('quiz-container');
-      container.innerHTML = '';
-      selectedQuestions.forEach((q, index) => {
-        const prompt = questionPrompts[Math.floor(Math.random() * questionPrompts.length)];
-        const div = document.createElement('div');
-        div.className = 'question-block';
-        div.innerHTML = `
-          <h3>Q${index + 1}. ${prompt}</h3>
-          <ul>
-            ${Object.entries(q.options).map(([key, val]) => `
-              <li>
-                <button data-correct="${key === q.correct_letter}" data-key="${key}" data-value="${val}" onclick="checkAnswer(this, '${q.correct_letter}')">${val}</button>
-              </li>
-            `).join('')}
-          </ul>
-        `;
-        container.appendChild(div);
-      });
-
-      const scoreDiv = document.createElement('div');
-      scoreDiv.className = 'score';
-      scoreDiv.textContent = `Score: 0 / ${selectedQuestions.length}`;
-      container.appendChild(scoreDiv);
-
-      const resultDiv = document.createElement('div');
-      resultDiv.className = 'result';
-      resultDiv.id = 'result-msg';
-      container.appendChild(resultDiv);
-    }
-
-    function checkAnswer(btn, correctLetter) {
-      const questionBlock = btn.closest('.question-block');
-      const buttons = questionBlock.querySelectorAll("button");
-      // Disable all buttons
-      buttons.forEach(b => b.disabled = true);
-
-      buttons.forEach(b => {
-        // Remove all feedback classes first
-        b.classList.remove('correct-answer', 'selected-wrong', 'dimmed');
-        // Mark correct answer
-        if (b.dataset.key === correctLetter) {
-          b.classList.add('correct-answer');
-        } else if (b === btn) {
-          // Mark wrong answer if this was the clicked one
-          b.classList.add('selected-wrong');
-        } else {
-          // Dim all other wrong answers
-          b.classList.add('dimmed');
-        }
-      });
-
-      // Increase score if correct
-      if (btn.dataset.key === correctLetter) {
-        score++;
-      }
-
-      // Update score display
-      const scoreDiv = document.querySelector('.score');
-      if (scoreDiv) {
-        scoreDiv.textContent = `Score: ${score} / ${selectedQuestions.length}`;
-      }
-
-      // Show Hindi Meaning automatically after answer
-      const questionIndex = Array.from(document.querySelectorAll('.question-block')).indexOf(questionBlock);
-      const correctWord = selectedQuestions[questionIndex].correct_word;
-      const hindiMeaning = selectedQuestions[questionIndex].hindi_meaning || 'No Hindi meaning available';
-      const correctBtn = Array.from(buttons).find(b => b.dataset.key === correctLetter);
-
-      // Remove existing meaning if present
-      let oldMeaningDiv = questionBlock.querySelector('.hindi-meaning-div');
-      if (oldMeaningDiv) oldMeaningDiv.remove();
-
-      const meaningDiv = document.createElement('div');
-      meaningDiv.className = 'hindi-meaning-div';
-      meaningDiv.textContent = hindiMeaning;
-      correctBtn.parentElement.appendChild(meaningDiv);
-
-      // Check if quiz is finished
-      const allButtons = document.querySelectorAll('.question-block button:not([disabled])');
-      if (allButtons.length === 0) {
-        if (timerInterval) clearInterval(timerInterval); // Stop timer if quiz finished early
-        const resultMsg = document.getElementById('result-msg');
-        const percent = (score / selectedQuestions.length) * 100;
-        resultMsg.textContent = percent >= 50 ? "✅ Passed!" : "❌ Failed. Try Again.";
-        resultMsg.style.color = percent >= 50 ? "green" : "red";
-      }
+    function submitQuiz() {
+      let correct = document.querySelectorAll('.correct-answer.selected').length;
+      let total = document.querySelectorAll('.question-block').length;
+      document.getElementById("score-summary").innerText = `You scored ${correct} out of ${total}.`;
+      document.getElementById("retry-btn").style.display = "inline-block";
+      document.getElementById("submit-btn").style.display = "none";
     }
 
     function adjustFontSize(change) {
-      fontSize += change;
-      document.querySelectorAll('.question-block').forEach(el => {
-        el.style.fontSize = fontSize + 'px';
-      });
-    }
-
-    function shuffleArray(arr) {
-      for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-      }
+      const container = document.getElementById("quiz-container");
+      const style = window.getComputedStyle(container, null).getPropertyValue('font-size');
+      const currentSize = parseFloat(style);
+      container.style.fontSize = (currentSize + change) + "px";
     }
   </script>
 </body>
-</html>
